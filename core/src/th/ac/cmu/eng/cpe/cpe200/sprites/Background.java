@@ -14,6 +14,11 @@ public class Background extends BaseSprite{
     }
 
     @Override
+    public void loadAsset(AssetManager assetManager) {
+
+    }
+
+    @Override
     public void update(float deltaTime) {
 
     }

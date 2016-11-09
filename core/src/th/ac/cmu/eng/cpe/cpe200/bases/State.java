@@ -30,4 +30,12 @@ public abstract class State {
     public InputProcessor getInputProcessor() {
         return inputProcessor;
     }
+
+    public StateManager getStateManager() {
+        return stateManager;
+    }
+
+    public AssetManager getAssetManager() {
+        return assetManager;
+    }
 }

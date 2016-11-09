@@ -52,7 +52,8 @@ public class GestureDetection {
         if (pixmap != null) {
             if (touchLine != null)
                 touchLine.dispose();
-            touchLine = new Texture(pixmap);
+            touchLine = new Texture(pixmap, true);
+            touchLine.setFilter(Texture.TextureFilter.MipMapLinearLinear, Texture.TextureFilter.MipMapLinearLinear);
             batch.draw(touchLine, 0, 0);
         }
     }

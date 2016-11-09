@@ -18,8 +18,8 @@ import java.util.EmptyStackException;
 public class Prefender extends ApplicationAdapter {
 
     public static final String TAG = Prefender.class.getSimpleName();
-    public static final int WIDTH = 800;
-    public static final int HEIGHT = 480;
+    public static final int WIDTH = 800*3/2;
+    public static final int HEIGHT = 480*3/2;
     GestureDetection gestureDetection;
     InputProcessor inputProcessor = new InputProcessor() {
         @Override
