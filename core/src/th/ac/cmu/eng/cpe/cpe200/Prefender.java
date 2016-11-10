@@ -18,8 +18,8 @@ import java.util.EmptyStackException;
 public class Prefender extends ApplicationAdapter {
 
     public static final String TAG = Prefender.class.getSimpleName();
-    public static final int WIDTH = 800*3/2;
-    public static final int HEIGHT = 480*3/2;
+    public static final int WIDTH = 800 * 3 / 2;
+    public static final int HEIGHT = 480 * 3 / 2;
     GestureDetection gestureDetection;
     InputProcessor inputProcessor = new InputProcessor() {
         @Override
@@ -45,6 +45,14 @@ public class Prefender extends ApplicationAdapter {
 
         @Override
         public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+            String his = "{";
+            for (int i = 0; i < gestureDetection.getHistogram().length; i++) {
+                his += gestureDetection.getHistogram()[i];
+                if(i<gestureDetection.getHistogram().length-1)
+                    his += ",";
+            }
+            his += "},";
+            System.out.println("" + his);
             gestureDetection.finish();
             return true;
         }

@@ -195,16 +195,19 @@ public class GestureDetection {
                 pixmap.setColor(Color.BLUE);
                 break;
             case 2:
-                pixmap.setColor(Color.YELLOW);
+                pixmap.setColor(Color.FOREST);
                 break;
             case 3:
-                pixmap.setColor(Color.GREEN);
+                pixmap.setColor(Color.BROWN);
                 break;
             case 4:
-                pixmap.setColor(Color.ORANGE);
+                pixmap.setColor(Color.CYAN);
                 break;
             case 5:
                 pixmap.setColor(Color.PINK);
+                break;
+            case 6:
+                pixmap.setColor(Color.YELLOW);
                 break;
             default:
                 pixmap.setColor(Color.LIGHT_GRAY);
@@ -227,5 +230,9 @@ public class GestureDetection {
         error = Math.sqrt(error);
 
         return error;
+    }
+
+    public int[] getHistogram() {
+        return histogram;
     }
 }
