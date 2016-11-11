@@ -12,6 +12,7 @@ public abstract class BaseSprite {
     private AssetManager assetManager;
     private Vector2 position;
     private Vector2 velocity;
+    protected int velocity_scale = 100;
 
     public BaseSprite(AssetManager assetManager) {
         this.assetManager = assetManager;

@@ -13,6 +13,7 @@ public abstract class State {
     private StateManager stateManager;
     private AssetManager assetManager;
     private InputProcessor inputProcessor;
+    protected StateManager gsm;
 
     public State(StateManager stateManager, AssetManager assetManager) {
         this.stateManager = stateManager;
@@ -20,6 +21,8 @@ public abstract class State {
 
         // Load Resource Here
     }
+
+    protected abstract void handleInput();
 
     public abstract void update(float deltaTime);
 
@@ -29,6 +32,10 @@ public abstract class State {
 
     public InputProcessor getInputProcessor() {
         return inputProcessor;
+    }
+
+    public void setInputProcessor(InputProcessor inputProcessor) {
+        this.inputProcessor = inputProcessor;
     }
 
     public StateManager getStateManager() {

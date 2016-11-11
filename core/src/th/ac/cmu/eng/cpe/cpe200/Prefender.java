@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.GridPoint2;
 import th.ac.cmu.eng.cpe.cpe200.bases.State;
 import th.ac.cmu.eng.cpe.cpe200.sprites.Background;
+import th.ac.cmu.eng.cpe.cpe200.sprites.Meteoroid;
 import th.ac.cmu.eng.cpe.cpe200.states.MenuState;
 import th.ac.cmu.eng.cpe.cpe200.utils.GestureDetection;
 
@@ -18,9 +19,12 @@ import java.util.EmptyStackException;
 public class Prefender extends ApplicationAdapter {
 
     public static final String TAG = Prefender.class.getSimpleName();
-    public static final int WIDTH = 800*3/2;
-    public static final int HEIGHT = 480*3/2;
+    public static final int WIDTH = 800 * 3 / 2;
+    public static final int HEIGHT = 480 * 3 / 2;
     GestureDetection gestureDetection;
+
+
+
     InputProcessor inputProcessor = new InputProcessor() {
         @Override
         public boolean keyDown(int keycode) {
@@ -84,6 +88,8 @@ public class Prefender extends ApplicationAdapter {
         gestureDetection = new GestureDetection();
 
         Gdx.input.setInputProcessor(inputProcessor);
+
+
     }
 
     @Override
@@ -99,6 +105,8 @@ public class Prefender extends ApplicationAdapter {
             // Background Space wewwww~
             background.update(deltaTime);
             gestureDetection.render(batch);
+
+
             // Update and Render Top State
             try {
                 State state = stateManager.peek();
@@ -122,4 +130,6 @@ public class Prefender extends ApplicationAdapter {
         stateManager.dispose();
         batch.dispose();
     }
+
+
 }

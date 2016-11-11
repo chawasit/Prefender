@@ -13,6 +13,7 @@ public class Background extends BaseSprite{
         super(assetManager);
     }
 
+
     @Override
     public void loadAsset(AssetManager assetManager) {
 
