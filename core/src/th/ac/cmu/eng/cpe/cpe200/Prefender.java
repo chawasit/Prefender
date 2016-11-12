@@ -104,8 +104,6 @@ public class Prefender extends ApplicationAdapter {
         if (assetManager.update()) {
             // Background Space wewwww~
             background.update(deltaTime);
-            gestureDetection.render(batch);
-
 
             // Update and Render Top State
             try {
@@ -115,6 +113,7 @@ public class Prefender extends ApplicationAdapter {
             } catch (EmptyStackException e) {
                 stateManager.push(new MenuState(stateManager, assetManager));
             }
+            gestureDetection.render(batch);
 
         } else {
             // Render Loading Screen

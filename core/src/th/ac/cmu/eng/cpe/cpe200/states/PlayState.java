@@ -2,6 +2,7 @@ package th.ac.cmu.eng.cpe.cpe200.states;
 
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import th.ac.cmu.eng.cpe.cpe200.Manager.MeteoroidManager;
 import th.ac.cmu.eng.cpe.cpe200.StateManager;
 import th.ac.cmu.eng.cpe.cpe200.bases.State;
 import th.ac.cmu.eng.cpe.cpe200.sprites.Meteoroid;
@@ -11,8 +12,7 @@ import th.ac.cmu.eng.cpe.cpe200.sprites.Meteoroid;
  */
 public class PlayState extends State {
 
-
-    private Meteoroid meteoroids;
+    private MeteoroidManager meteoroids;
 
     public PlayState(StateManager stateManager, AssetManager assetManager) {
         super(stateManager, assetManager);
@@ -28,9 +28,8 @@ public class PlayState extends State {
     @Override
     public void update(float deltaTime) {
         if (meteoroids==null)
-        meteoroids = new Meteoroid(getAssetManager());
+            meteoroids = new MeteoroidManager(getAssetManager());
         meteoroids.update(deltaTime);
-      //  meteoroids.update(deltaTime);
 
     }
 
