@@ -56,7 +56,6 @@ public class Meteoroid extends BaseMeteoroid {
         float x2 = getPosition().x;
         float y2 = getPosition().y;
         float dimention = (float) Math.sqrt(((x1 - x2) * (x1 - x2)) + ((y1 - y2) * (y1 - y2)));
-        System.out.println(dimention);
         if (dimention < 10) {
             isHit = true;
         }
