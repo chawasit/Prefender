@@ -16,8 +16,6 @@ public abstract class State {
     public State(StateManager stateManager, AssetManager assetManager) {
         this.stateManager = stateManager;
         this.assetManager = assetManager;
-
-        // Load Resource Here
     }
 
     public abstract void update(float deltaTime);

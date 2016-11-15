@@ -1,5 +1,7 @@
 package th.ac.cmu.eng.cpe.cpe200.desktop;
 
+import com.badlogic.gdx.Application;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import com.badlogic.gdx.graphics.Texture;
@@ -26,7 +28,6 @@ public class DesktopLauncher {
 		config.title = Prefender.TITLE;
 		config.fullscreen = false;
 
-
-		new LwjglApplication(new Prefender(), config);
+		new LwjglApplication(new Prefender((arg.length==1 && arg[0].toUpperCase().compareTo("DEBUG")==0)), config);
 	}
 }

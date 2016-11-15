@@ -1,19 +1,19 @@
 
 particles.png
-size: 2048,1024
+size: 2048,2048
 format: RGBA8888
 filter: MipMapLinearLinear,MipMapLinearLinear
 repeat: none
 click_effect
   rotate: false
-  xy: 2, 2
-  size: 877, 877
-  orig: 877, 877
+  xy: 2, 214
+  size: 1099, 1132
+  orig: 1099, 1132
   offset: 0, 0
   index: -1
 star_swarm
   rotate: false
-  xy: 881, 669
+  xy: 2, 2
   size: 221, 210
   orig: 221, 210
   offset: 0, 0

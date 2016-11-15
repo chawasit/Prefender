@@ -29,7 +29,6 @@ public abstract class BaseSprite {
     public void update(float deltaTime) {
         if(!isInitialized())
             init();
-
     }
 
     public abstract void render(SpriteBatch batch);

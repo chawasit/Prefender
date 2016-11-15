@@ -1,5 +1,6 @@
 package th.ac.cmu.eng.cpe.cpe200;
 
+import com.badlogic.gdx.Application;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
@@ -16,6 +17,7 @@ import java.util.EmptyStackException;
 public class Prefender extends ApplicationAdapter {
 
     public static final String TAG = Prefender.class.getSimpleName();
+
     public static final int WIDTH = 1200;
     public static final int HEIGHT = 720;
     public static final String TITLE = "Prefender CPE#24";
@@ -26,9 +28,19 @@ public class Prefender extends ApplicationAdapter {
     private Texture loadingImage;
     private BackgroundSprite backgroundSprite;
     private long splash_time;
+    private boolean debug;
+
+    public Prefender(boolean debug) {
+        this.debug = debug;
+    }
 
     @Override
     public void create() {
+        if(debug)
+            Gdx.app.setLogLevel(Application.LOG_DEBUG);
+        else
+            Gdx.app.setLogLevel(Application.LOG_NONE);
+
         batch = new SpriteBatch();
         stateManager = new StateManager();
         assetManager = new AssetManager();
@@ -50,7 +62,7 @@ public class Prefender extends ApplicationAdapter {
     @Override
     public void render() {
         // Clear Screen with Blood!
-        float gray = (float) 20/255;
+        float gray = (float) 35 / 255;
         Gdx.gl.glClearColor(gray, gray, gray, 1f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
@@ -76,6 +88,9 @@ public class Prefender extends ApplicationAdapter {
                     Prefender.WIDTH, Prefender.HEIGHT);
         }
         batch.end();
+
+
+        Gdx.app.log("FPS", ""+Gdx.graphics.getFramesPerSecond());
     }
 
     @Override
