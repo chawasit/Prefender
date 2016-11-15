@@ -12,7 +12,6 @@ public abstract class State {
 
     private StateManager stateManager;
     private AssetManager assetManager;
-    private InputProcessor inputProcessor;
 
     public State(StateManager stateManager, AssetManager assetManager) {
         this.stateManager = stateManager;
@@ -26,10 +25,6 @@ public abstract class State {
     public abstract void render(SpriteBatch batch);
 
     public abstract void dispose();
-
-    public InputProcessor getInputProcessor() {
-        return inputProcessor;
-    }
 
     public StateManager getStateManager() {
         return stateManager;

@@ -5,21 +5,27 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import th.ac.cmu.eng.cpe.cpe200.bases.BaseSprite;
 
 /**
- * Created by zalzer on 11/8/2016 AD.
+ * Created by zalzer on 11/15/2016 AD.
  */
-public class Background extends BaseSprite{
+public class HudSprite extends BaseSprite {
 
-    public Background(AssetManager assetManager) {
+    public HudSprite(AssetManager assetManager) {
         super(assetManager);
     }
 
     @Override
-    public void loadAsset(AssetManager assetManager) {
+    public void loadAsset() {
+//        assetManager.load();
+    }
+
+    @Override
+    public void init() {
 
     }
 
     @Override
     public void update(float deltaTime) {
+
 
     }
 
@@ -32,4 +38,6 @@ public class Background extends BaseSprite{
     public void dispose() {
 
     }
+
+
 }

@@ -42,7 +42,7 @@ public class GestureDetection {
 
 
     private void createPixmap() {
-        if(pixmap!=null)
+        if (pixmap != null)
             pixmap.dispose();
         pixmap = new Pixmap(Prefender.WIDTH, Prefender.HEIGHT, Pixmap.Format.RGBA8888);
         pixmap.setColor(Color.LIGHT_GRAY);
@@ -76,7 +76,8 @@ public class GestureDetection {
      * จบการทำงาน เคลียร์ค่าต่าง ๆ
      */
     public int finish() {
-        pixmap.dispose();
+        if (pixmap != null)
+            pixmap.dispose();
         pixmap = null;
         histogram = null;
         pointStore.clear();

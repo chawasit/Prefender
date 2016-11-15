@@ -2,111 +2,66 @@ package th.ac.cmu.eng.cpe.cpe200;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.GridPoint2;
+import com.badlogic.gdx.utils.TimeUtils;
 import th.ac.cmu.eng.cpe.cpe200.bases.State;
-import th.ac.cmu.eng.cpe.cpe200.sprites.Background;
+import th.ac.cmu.eng.cpe.cpe200.sprites.BackgroundSprite;
 import th.ac.cmu.eng.cpe.cpe200.states.MenuState;
-import th.ac.cmu.eng.cpe.cpe200.utils.GestureDetection;
 
 import java.util.EmptyStackException;
 
 public class Prefender extends ApplicationAdapter {
 
     public static final String TAG = Prefender.class.getSimpleName();
-    public static final int WIDTH = 800 * 3 / 2;
-    public static final int HEIGHT = 480 * 3 / 2;
-    GestureDetection gestureDetection;
-    InputProcessor inputProcessor = new InputProcessor() {
-        @Override
-        public boolean keyDown(int keycode) {
-            return false;
-        }
+    public static final int WIDTH = 1200;
+    public static final int HEIGHT = 720;
+    public static final String TITLE = "Prefender CPE#24";
 
-        @Override
-        public boolean keyUp(int keycode) {
-            return false;
-        }
-
-        @Override
-        public boolean keyTyped(char character) {
-            return false;
-        }
-
-        @Override
-        public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-            gestureDetection.init(new GridPoint2(screenX, screenY));
-            return true;
-        }
-
-        @Override
-        public boolean touchUp(int screenX, int screenY, int pointer, int button) {
-            String his = "{";
-            for (int i = 0; i < gestureDetection.getHistogram().length; i++) {
-                his += gestureDetection.getHistogram()[i];
-                if(i<gestureDetection.getHistogram().length-1)
-                    his += ",";
-            }
-            his += "},";
-            System.out.println("" + his);
-            gestureDetection.finish();
-            return true;
-        }
-
-        @Override
-        public boolean touchDragged(int screenX, int screenY, int pointer) {
-            gestureDetection.addPoint(new GridPoint2(screenX, screenY));
-            return true;
-        }
-
-        @Override
-        public boolean mouseMoved(int screenX, int screenY) {
-            return false;
-        }
-
-        @Override
-        public boolean scrolled(int amount) {
-            return false;
-        }
-    };
     private StateManager stateManager;
     private SpriteBatch batch;
     private AssetManager assetManager;
     private Texture loadingImage;
-    private Background background;
+    private BackgroundSprite backgroundSprite;
+    private long splash_time;
 
     @Override
     public void create() {
         batch = new SpriteBatch();
         stateManager = new StateManager();
         assetManager = new AssetManager();
-        background = new Background(assetManager);
+        preLoadAssets();
+
+        backgroundSprite = new BackgroundSprite(assetManager);
 
         // Begin with Menu
         stateManager.push(new MenuState(stateManager, assetManager));
 
-        gestureDetection = new GestureDetection();
+        splash_time = TimeUtils.millis() + 1000 * 3;
+    }
 
-        Gdx.input.setInputProcessor(inputProcessor);
+    private void preLoadAssets() {
+        loadingImage = new Texture(Gdx.files.internal("resource/loading.png"), true);
+        loadingImage.setFilter(Texture.TextureFilter.MipMapLinearLinear, Texture.TextureFilter.MipMapLinearLinear);
     }
 
     @Override
     public void render() {
         // Clear Screen with Blood!
-        Gdx.gl.glClearColor(0, 0, 0, 0.7f);
+        float gray = (float) 20/255;
+        Gdx.gl.glClearColor(gray, gray, gray, 1f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         // Draw New Frame
         float deltaTime = Gdx.graphics.getDeltaTime();
         batch.begin();
-        if (assetManager.update()) {
-            // Background Space wewwww~
-            background.update(deltaTime);
-            gestureDetection.render(batch);
+
+        if (assetManager.update() && TimeUtils.millis() > splash_time) {
+            // BackgroundSprite Space wew~
+            backgroundSprite.update(deltaTime);
+            backgroundSprite.render(batch);
             // Update and Render Top State
             try {
                 State state = stateManager.peek();
@@ -115,19 +70,21 @@ public class Prefender extends ApplicationAdapter {
             } catch (EmptyStackException e) {
                 stateManager.push(new MenuState(stateManager, assetManager));
             }
-
         } else {
-            // Render Loading Screen
-            // TODO: show loading
-            Gdx.app.log(TAG, "Loading Screen");
+            batch.draw(loadingImage,
+                    0, 0,
+                    Prefender.WIDTH, Prefender.HEIGHT);
         }
         batch.end();
     }
 
     @Override
     public void dispose() {
-        background.dispose();
-        stateManager.dispose();
-        batch.dispose();
+        if (backgroundSprite != null)
+            backgroundSprite.dispose();
+        if (stateManager != null)
+            stateManager.dispose();
+        if (batch != null)
+            batch.dispose();
     }
 }

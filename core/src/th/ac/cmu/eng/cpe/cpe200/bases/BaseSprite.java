@@ -9,34 +9,39 @@ import com.badlogic.gdx.math.Vector2;
  */
 public abstract class BaseSprite {
 
-    private AssetManager assetManager;
-    private Vector2 position;
-    private Vector2 velocity;
+    protected AssetManager assetManager;
+    protected Vector2 position;
+    protected Vector2 velocity;
+    private boolean initialized;
 
     public BaseSprite(AssetManager assetManager) {
         this.assetManager = assetManager;
         position = new Vector2();
         velocity = new Vector2();
-        loadAsset(assetManager);
+        initialized = false;
+        loadAsset();
     }
 
-    public abstract void loadAsset(AssetManager assetManager);
+    public abstract void loadAsset();
 
-    public abstract void update(float deltaTime);
+    public abstract void init();
+
+    public void update(float deltaTime) {
+        if(!isInitialized())
+            init();
+
+    }
 
     public abstract void render(SpriteBatch batch);
 
     public abstract void dispose();
 
-    public AssetManager getAssetManager() {
-        return assetManager;
+    public boolean isInitialized() {
+        return initialized;
     }
 
-    public Vector2 getPosition() {
-        return position;
+    public void initialized() {
+        initialized = true;
     }
 
-    public Vector2 getVelocity() {
-        return velocity;
-    }
 }
