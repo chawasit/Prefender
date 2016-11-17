@@ -47,7 +47,7 @@ public class MeteoroidManager extends BaseMeteoroid {
                 meteoroid.randomPosition();
             }
         }
-
+        //Gdx.app.log(TAG, String.valueOf(score));
     }
 
     @Override
@@ -71,7 +71,7 @@ public class MeteoroidManager extends BaseMeteoroid {
     }
 
     public void addMeteoroid(AssetManager assetManager){
-        if(MAX <=  meteoroids.size())
+        if(MAX >=  meteoroids.size())
             meteoroids.add(new Meteoroid(assetManager));
     }
 

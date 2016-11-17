@@ -1,7 +1,6 @@
 package th.ac.cmu.eng.cpe.cpe200.bases;
 
 import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import th.ac.cmu.eng.cpe.cpe200.Prefender;
 
 import java.util.Stack;
@@ -12,7 +11,7 @@ import java.util.Stack;
 public abstract class BaseMeteoroid extends BaseSprite {
 
     private Stack<Integer> hp;
-
+    protected double radian;
     public BaseMeteoroid(AssetManager assetManager) {
         super(assetManager);
     }
@@ -36,10 +35,12 @@ public abstract class BaseMeteoroid extends BaseSprite {
     }
 
     public void getVelocityToCenter() {
-        double radian = Math.atan2( getPosition().y- Prefender.HEIGHT/2, getPosition().x - Prefender.WIDTH/2);
+        radian = Math.atan2( getPosition().y- Prefender.HEIGHT/2, getPosition().x - Prefender.WIDTH/2);
         getVelocity().x = (float) -(velocity_scale*Math.cos(radian));
         getVelocity().y = (float) -(velocity_scale*Math.sin(radian));
     }
 
-
+//    public double getRadian() {
+//        return radian;
+//    }
 }

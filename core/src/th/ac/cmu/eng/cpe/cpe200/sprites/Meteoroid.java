@@ -3,6 +3,7 @@ package th.ac.cmu.eng.cpe.cpe200.sprites;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import th.ac.cmu.eng.cpe.cpe200.Prefender;
 import th.ac.cmu.eng.cpe.cpe200.bases.BaseMeteoroid;
 
@@ -25,8 +26,10 @@ public class Meteoroid extends BaseMeteoroid {
 
     @Override
     public void loadAsset(AssetManager assetManager) {
-        if (meteoroidTexture == null)
-            meteoroidTexture = new Texture("badlogic.jpg");
+        if (meteoroidTexture == null) {
+            meteoroidTexture = new Texture("meteoroid1.png");
+        }
+
     }
 
     @Override
@@ -36,19 +39,20 @@ public class Meteoroid extends BaseMeteoroid {
         getPosition().x += deltaTime * getVelocity().x;
         getPosition().y += deltaTime * getVelocity().y;
 
+
     }
 
     @Override
     public void render(SpriteBatch batch) {
         batch.draw(meteoroidTexture, getPosition().x - 60 / 2,
-                getPosition().y - 60 / 2,
-                60,60);
+                 getPosition().y - 60 / 2,128,50);
     }
 
     @Override
     public void dispose() {
-        meteoroidTexture.dispose();
+       // meteoroidTexture;
     }
+
 
     private void toCenter() {
         float x1 = Prefender.WIDTH / 2;
@@ -56,9 +60,10 @@ public class Meteoroid extends BaseMeteoroid {
         float x2 = getPosition().x;
         float y2 = getPosition().y;
         float dimention = (float) Math.sqrt(((x1 - x2) * (x1 - x2)) + ((y1 - y2) * (y1 - y2)));
-        if (dimention < 10) {
+        if (dimention < 50) {
             isHit = true;
         }
+
     }
 
     public void randomPosition() {
