@@ -38,6 +38,8 @@ public class GestureDetection {
     public GestureDetection() {
         histogram = new int[9];
         pointStore = new ArrayList<GridPoint2>();
+        lastTouchPoint = new GridPoint2();
+        lastInterestingPoint = new GridPoint2();
     }
 
 
@@ -91,6 +93,8 @@ public class GestureDetection {
      * @param newPoint
      */
     public void addPoint(GridPoint2 newPoint) {
+        if(pixmap == null)
+            return;
         // Draw Line between point
         for (GridPoint2 p :
                 new Bresenham2().line(lastTouchPoint, newPoint)) {
@@ -138,7 +142,7 @@ public class GestureDetection {
             histogram[7]++; // DOWN-LEFT
         } else {
             histogram[8]--;
-            Gdx.app.log(TAG, "ERROR degree " + degree);
+            Gdx.app.error(TAG, "ERROR degree " + degree);
         }
     }
 

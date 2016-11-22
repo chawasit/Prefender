@@ -30,7 +30,6 @@ public class BackgroundSprite extends BaseSprite {
     }
 
     public void loadAsset() {
-        System.out.println("Load Asset");
         assetManager.load("packed/particles.atlas", TextureAtlas.class);
     }
 

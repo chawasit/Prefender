@@ -24,7 +24,7 @@ public class DesktopLauncher {
 		config.width = Prefender.WIDTH;
 		config.height = Prefender.HEIGHT;
 		config.resizable = false;
-		config.samples = 8;
+		config.samples = 3;
 		config.title = Prefender.TITLE;
 		config.fullscreen = false;
 

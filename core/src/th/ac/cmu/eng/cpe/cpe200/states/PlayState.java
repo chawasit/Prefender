@@ -92,7 +92,6 @@ public class PlayState extends State {
 
     @Override
     public void render(SpriteBatch batch) {
-
         mouseEffect.draw(batch);
         gestureDetection.render(batch);
     }

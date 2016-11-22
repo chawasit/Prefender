@@ -90,7 +90,7 @@ public class Prefender extends ApplicationAdapter {
         batch.end();
 
 
-        Gdx.app.log("FPS", ""+Gdx.graphics.getFramesPerSecond());
+//        Gdx.app.log("FPS", ""+Gdx.graphics.getFramesPerSecond());
     }
 
     @Override
