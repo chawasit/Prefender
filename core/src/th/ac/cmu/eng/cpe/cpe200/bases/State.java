@@ -3,6 +3,7 @@ package th.ac.cmu.eng.cpe.cpe200.bases;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import th.ac.cmu.eng.cpe.cpe200.StateManager;
 
 /**
@@ -10,12 +11,12 @@ import th.ac.cmu.eng.cpe.cpe200.StateManager;
  */
 public abstract class State {
 
-    private StateManager stateManager;
-    private AssetManager assetManager;
+    protected StateManager stateManager;
+    protected Skin resource;
 
-    public State(StateManager stateManager, AssetManager assetManager) {
+    public State(StateManager stateManager, Skin skin) {
         this.stateManager = stateManager;
-        this.assetManager = assetManager;
+        this.resource = skin;
     }
 
     public abstract void update(float deltaTime);
@@ -24,11 +25,4 @@ public abstract class State {
 
     public abstract void dispose();
 
-    public StateManager getStateManager() {
-        return stateManager;
-    }
-
-    public AssetManager getAssetManager() {
-        return assetManager;
-    }
 }

@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.TimeUtils;
 import th.ac.cmu.eng.cpe.cpe200.bases.BaseSprite;
 
@@ -19,15 +20,10 @@ public class ScoreEffectSprite extends BaseSprite {
     private BitmapFont font;
     private Vector2 refPosition;
 
-    public ScoreEffectSprite(AssetManager assetManager, int score, Vector2 refPosition) {
-        super(assetManager);
+    public ScoreEffectSprite(Skin skin, int score, Vector2 refPosition) {
+        super(skin);
         this.score = score;
         this.refPosition = refPosition;
-    }
-
-    @Override
-    public void loadAsset() {
-
     }
 
     @Override
@@ -40,7 +36,6 @@ public class ScoreEffectSprite extends BaseSprite {
 
     @Override
     public void update(float deltaTime) {
-        super.update(deltaTime);
         position.y += velocity.y*deltaTime;
     }
 

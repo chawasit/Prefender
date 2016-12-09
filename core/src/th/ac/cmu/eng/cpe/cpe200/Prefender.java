@@ -7,6 +7,8 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.TimeUtils;
 import th.ac.cmu.eng.cpe.cpe200.bases.State;
 import th.ac.cmu.eng.cpe.cpe200.sprites.BackgroundSprite;
@@ -29,9 +31,14 @@ public class Prefender extends ApplicationAdapter {
     private BackgroundSprite backgroundSprite;
     private long splash_time;
     private boolean debug;
+    private Skin resource;
+    private boolean isLoaded;
+    public static boolean playSound = true;
 
     public Prefender(boolean debug) {
         this.debug = debug;
+        this.isLoaded = false;
+        playSound = true;
     }
 
     @Override
@@ -44,19 +51,20 @@ public class Prefender extends ApplicationAdapter {
         batch = new SpriteBatch();
         stateManager = new StateManager();
         assetManager = new AssetManager();
-        preLoadAssets();
-
-        backgroundSprite = new BackgroundSprite(assetManager);
-
-        // Begin with Menu
-        stateManager.push(new MenuState(stateManager, assetManager));
-
+        assetManager.load("packed/resource.atlas", TextureAtlas.class);
+        loadingImage = new Texture(Gdx.files.internal("resource/loading.png"));
         splash_time = TimeUtils.millis() + 1000 * 3;
     }
 
-    private void preLoadAssets() {
-        loadingImage = new Texture(Gdx.files.internal("resource/loading.png"), true);
-        loadingImage.setFilter(Texture.TextureFilter.MipMapLinearLinear, Texture.TextureFilter.MipMapLinearLinear);
+    private void init() {
+        isLoaded = true;
+        resource = new Skin();
+        resource.addRegions(assetManager.get("packed/resource.atlas", TextureAtlas.class));
+
+        backgroundSprite = new BackgroundSprite(resource);
+        // Begin with Menu
+        stateManager.push(new MenuState(stateManager, resource));
+
     }
 
     @Override
@@ -71,6 +79,8 @@ public class Prefender extends ApplicationAdapter {
         batch.begin();
 
         if (assetManager.update() && TimeUtils.millis() > splash_time) {
+            if(!isLoaded)
+                init();
             // BackgroundSprite Space wew~
             backgroundSprite.update(deltaTime);
             backgroundSprite.render(batch);
@@ -80,7 +90,7 @@ public class Prefender extends ApplicationAdapter {
                 state.update(deltaTime);
                 state.render(batch);
             } catch (EmptyStackException e) {
-                stateManager.push(new MenuState(stateManager, assetManager));
+                stateManager.push(new MenuState(stateManager, resource));
             }
         } else {
             batch.draw(loadingImage,
@@ -88,9 +98,6 @@ public class Prefender extends ApplicationAdapter {
                     Prefender.WIDTH, Prefender.HEIGHT);
         }
         batch.end();
-
-
-//        Gdx.app.log("FPS", ""+Gdx.graphics.getFramesPerSecond());
     }
 
     @Override

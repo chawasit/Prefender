@@ -6,9 +6,11 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.GridPoint2;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import th.ac.cmu.eng.cpe.cpe200.Prefender;
 import th.ac.cmu.eng.cpe.cpe200.StateManager;
 import th.ac.cmu.eng.cpe.cpe200.bases.State;
+import th.ac.cmu.eng.cpe.cpe200.sprites.HudSprite;
 import th.ac.cmu.eng.cpe.cpe200.utils.GestureDetection;
 
 /**
@@ -19,6 +21,8 @@ public class PlayState extends State {
     private GestureDetection gestureDetection;
     private boolean isStarted;
     private ParticleEffect mouseEffect;
+    private HudSprite hudSprite;
+
     InputProcessor inputProcessor = new InputProcessor() {
         @Override
         public boolean keyDown(int keycode) {
@@ -70,14 +74,17 @@ public class PlayState extends State {
     };
 
 
-    public PlayState(StateManager stateManager, AssetManager assetManager) {
-        super(stateManager, assetManager);
+    public PlayState(StateManager stateManager, Skin skin) {
+        super(stateManager, skin);
+        init();
+    }
+
+    private void init() {
+        hudSprite = new HudSprite(resource);
 
         gestureDetection = new GestureDetection();
 
         Gdx.input.setInputProcessor(inputProcessor);
-
-        isStarted = true;
 
         mouseEffect = new ParticleEffect();
         mouseEffect.load(Gdx.files.internal("resource/particles/click_effect.p"),
@@ -88,12 +95,14 @@ public class PlayState extends State {
     @Override
     public void update(float deltaTime) {
         mouseEffect.update(deltaTime);
+        hudSprite.update(deltaTime);
     }
 
     @Override
     public void render(SpriteBatch batch) {
         mouseEffect.draw(batch);
         gestureDetection.render(batch);
+        hudSprite.render(batch);
     }
 
     @Override

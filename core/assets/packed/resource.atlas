@@ -1,0 +1,218 @@
+
+resource.png
+size: 2048,1024
+format: RGBA8888
+filter: MipMapLinearLinear,MipMapLinearLinear
+repeat: none
+loading
+  rotate: false
+  xy: 2, 2
+  size: 1200, 720
+  orig: 1200, 720
+  offset: 0, 0
+  index: -1
+
+resource2.png
+size: 4096,512
+format: RGBA8888
+filter: MipMapLinearLinear,MipMapLinearLinear
+repeat: none
+button/offspeaker
+  rotate: false
+  xy: 523, 212
+  size: 519, 152
+  orig: 519, 152
+  offset: 0, 0
+  index: -1
+button/offspeakerpress
+  rotate: false
+  xy: 523, 58
+  size: 519, 152
+  orig: 519, 152
+  offset: 0, 0
+  index: -1
+button/pause
+  rotate: false
+  xy: 1044, 212
+  size: 519, 152
+  orig: 519, 152
+  offset: 0, 0
+  index: -1
+button/pausepress
+  rotate: false
+  xy: 1044, 58
+  size: 519, 152
+  orig: 519, 152
+  offset: 0, 0
+  index: -1
+button/play
+  rotate: false
+  xy: 1565, 212
+  size: 519, 152
+  orig: 519, 152
+  offset: 0, 0
+  index: -1
+button/playpress
+  rotate: false
+  xy: 1565, 58
+  size: 519, 152
+  orig: 519, 152
+  offset: 0, 0
+  index: -1
+button/speaker
+  rotate: false
+  xy: 2086, 212
+  size: 519, 152
+  orig: 519, 152
+  offset: 0, 0
+  index: -1
+button/speakerpress
+  rotate: false
+  xy: 2086, 58
+  size: 519, 152
+  orig: 519, 152
+  offset: 0, 0
+  index: -1
+button/trophy
+  rotate: false
+  xy: 2, 184
+  size: 519, 180
+  orig: 519, 180
+  offset: 0, 0
+  index: -1
+button/trophypress
+  rotate: false
+  xy: 2, 2
+  size: 519, 180
+  orig: 519, 180
+  offset: 0, 0
+  index: -1
+
+resource3.png
+size: 4096,2048
+format: RGBA8888
+filter: MipMapLinearLinear,MipMapLinearLinear
+repeat: none
+earth/1
+  rotate: false
+  xy: 2, 881
+  size: 877, 877
+  orig: 877, 877
+  offset: 0, 0
+  index: -1
+earth/2
+  rotate: false
+  xy: 2, 2
+  size: 877, 877
+  orig: 877, 877
+  offset: 0, 0
+  index: -1
+earth/3
+  rotate: false
+  xy: 881, 881
+  size: 877, 877
+  orig: 877, 877
+  offset: 0, 0
+  index: -1
+earth/4
+  rotate: false
+  xy: 881, 2
+  size: 877, 877
+  orig: 877, 877
+  offset: 0, 0
+  index: -1
+earth/5
+  rotate: false
+  xy: 1760, 881
+  size: 877, 877
+  orig: 877, 877
+  offset: 0, 0
+  index: -1
+
+resource4.png
+size: 2048,512
+format: RGBA8888
+filter: MipMapLinearLinear,MipMapLinearLinear
+repeat: none
+logo/logo
+  rotate: false
+  xy: 2, 2
+  size: 1887, 392
+  orig: 1887, 392
+  offset: 0, 0
+  index: -1
+
+resource5.png
+size: 2048,1024
+format: RGBA8888
+filter: MipMapLinearLinear,MipMapLinearLinear
+repeat: none
+meteoroid/1
+  rotate: false
+  xy: 2, 241
+  size: 645, 251
+  orig: 645, 251
+  offset: 0, 0
+  index: -1
+meteoroid/2
+  rotate: false
+  xy: 984, 761
+  size: 645, 251
+  orig: 645, 251
+  offset: 0, 0
+  index: -1
+meteoroid/3
+  rotate: false
+  xy: 984, 508
+  size: 645, 251
+  orig: 645, 251
+  offset: 0, 0
+  index: -1
+meteoroid/4
+  rotate: false
+  xy: 984, 255
+  size: 645, 251
+  orig: 645, 251
+  offset: 0, 0
+  index: -1
+meteoroid/5
+  rotate: false
+  xy: 649, 2
+  size: 645, 251
+  orig: 645, 251
+  offset: 0, 0
+  index: -1
+meteoroid/lightning
+  rotate: false
+  xy: 2, 494
+  size: 489, 518
+  orig: 489, 518
+  offset: 0, 0
+  index: -1
+meteoroid/shilde
+  rotate: false
+  xy: 493, 494
+  size: 489, 518
+  orig: 489, 518
+  offset: 0, 0
+  index: -1
+
+resource6.png
+size: 2048,2048
+format: RGBA8888
+filter: MipMapLinearLinear,MipMapLinearLinear
+repeat: none
+particles/img/click_effect
+  rotate: false
+  xy: 2, 214
+  size: 1099, 1132
+  orig: 1099, 1132
+  offset: 0, 0
+  index: -1
+particles/img/star_swarm
+  rotate: false
+  xy: 2, 2
+  size: 221, 210
+  orig: 221, 210
+  offset: 0, 0
+  index: -1

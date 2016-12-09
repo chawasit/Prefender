@@ -200,10 +200,10 @@ public class GestureDetection {
                 pixmap.setColor(Color.BLUE);
                 break;
             case 2:
-                pixmap.setColor(Color.FOREST);
+                pixmap.setColor(Color.GREEN);
                 break;
             case 3:
-                pixmap.setColor(Color.BROWN);
+                pixmap.setColor(Color.PURPLE);
                 break;
             case 4:
                 pixmap.setColor(Color.CYAN);

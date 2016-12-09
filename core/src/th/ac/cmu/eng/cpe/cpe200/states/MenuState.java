@@ -1,13 +1,11 @@
 package th.ac.cmu.eng.cpe.cpe200.states;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.assets.loaders.SkinLoader;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import th.ac.cmu.eng.cpe.cpe200.Prefender;
 import th.ac.cmu.eng.cpe.cpe200.StateManager;
 import th.ac.cmu.eng.cpe.cpe200.bases.BaseSpriteGDX;
 import th.ac.cmu.eng.cpe.cpe200.bases.State;
@@ -18,51 +16,91 @@ import th.ac.cmu.eng.cpe.cpe200.sprites.Button;
  */
 public class MenuState extends State {
 
-    private Button test;
-    private BaseSpriteGDX sp;
+    private Button playBtn;
+    private Button soundOnBtn;
+    private Button soundOffBtn;
+    private Sprite logo;
 
-    public MenuState(StateManager stateManager, AssetManager assetManager) {
-        super(stateManager, assetManager);
-        assetManager.load("packed/earth.atlas", TextureAtlas.class);
+    public MenuState(StateManager stateManager, Skin skin) {
+        super(stateManager, skin);
+        init();
+    }
 
-        assetManager.finishLoading();
+    private void init() {
+        playBtn = new Button(resource);
+        playBtn.setBtnUp(resource.getRegion("button/play"));
+        playBtn.setBtnDown(resource.getRegion("button/playpress"));
+        playBtn.setBtnOver(resource.getRegion("button/playpress"));
+        playBtn.setCustomHeight(76);
+        playBtn.setCustomWidth(259);
+        playBtn.setPosition(Prefender.WIDTH / 2, Prefender.HEIGHT / 2);
 
-
-        TextureAtlas atlas = assetManager.get("packed/earth.atlas", TextureAtlas.class);
-        Skin sk = new Skin();
-        sk.addRegions(atlas);
-
-        test = new Button(assetManager);
-        test.setBtnUp(sk.getRegion("1"));
-        test.setBtnDown(sk.getRegion("2"));
-        test.setBtnOver(sk.getRegion("3"));
-
-        test.setButtonClickListener(new Button.ButtonClickListener() {
+        playBtn.setButtonClickListener(new Button.ButtonClickListener() {
             @Override
             public void clickEvent() {
-                getStateManager().popPush(new PlayState(getStateManager(), getAssetManager()));
+                stateManager.popPush(new PlayState(stateManager, resource));
             }
         });
 
-        test.setCustomHeight(200);
-        test.setCustomWidth(200);
-        test.setPosition(500, 500);
+        soundOnBtn = new Button(resource);
+        soundOnBtn.setBtnUp(resource.getRegion("button/speaker"));
+        soundOnBtn.setBtnDown(resource.getRegion("button/speakerpress"));
+        soundOnBtn.setBtnOver(resource.getRegion("button/speakerpress"));
+        soundOnBtn.setCustomHeight(76);
+        soundOnBtn.setCustomWidth(259);
+        soundOnBtn.setPosition(Prefender.WIDTH / 2, Prefender.HEIGHT / 2 - 200);
+        soundOnBtn.setButtonClickListener(new Button.ButtonClickListener() {
+            @Override
+            public void clickEvent() {
+                Prefender.playSound = false;
+                System.out.println("sound on click");
+            }
+        });
+
+        soundOffBtn = new Button(resource);
+        soundOffBtn.setBtnUp(resource.getRegion("button/offspeaker"));
+        soundOffBtn.setBtnDown(resource.getRegion("button/offspeakerpress"));
+        soundOffBtn.setBtnOver(resource.getRegion("button/offspeakerpress"));
+        soundOffBtn.setCustomHeight(76);
+        soundOffBtn.setCustomWidth(259);
+        soundOffBtn.setPosition(Prefender.WIDTH / 2, Prefender.HEIGHT / 2 - 200);
+        soundOffBtn.setButtonClickListener(new Button.ButtonClickListener() {
+            @Override
+            public void clickEvent() {
+                Prefender.playSound = true;
+                System.out.println("sound off click");
+            }
+        });
+
+        logo = resource.getSprite("logo/logo");
+        logo.setScale((float) 0.5);
+        logo.setOriginCenter();
+        logo.setPosition(Prefender.WIDTH/2 - logo.getWidth()/2, Prefender.HEIGHT/2);
     }
 
     @Override
     public void update(float deltaTime) {
-        test.update(deltaTime);
+        playBtn.update(deltaTime);
+        if(Prefender.playSound)
+            soundOnBtn.update(deltaTime);
+        else
+            soundOffBtn.update(deltaTime);
     }
 
     @Override
     public void render(SpriteBatch batch) {
-        BitmapFont b = new BitmapFont();
-        b.draw(batch, "Menu State", 400, 400);
-        test.render(batch);
+        playBtn.render(batch);
+        if(Prefender.playSound)
+            soundOnBtn.render(batch);
+        else
+            soundOffBtn.render(batch);
+
+        logo.draw(batch);
     }
 
     @Override
     public void dispose() {
-
+        playBtn.dispose();
+        soundOnBtn.dispose();
     }
 }

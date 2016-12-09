@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import th.ac.cmu.eng.cpe.cpe200.Prefender;
 import th.ac.cmu.eng.cpe.cpe200.bases.BaseSprite;
 
@@ -23,13 +24,8 @@ public class Button extends BaseSprite {
     private ButtonClickListener buttonClickListener;
     private int current_state;
 
-    public Button(AssetManager assetManager) {
-        super(assetManager);
-    }
-
-    @Override
-    public void loadAsset() {
-
+    public Button(Skin skin) {
+        super(skin);
     }
 
     @Override
@@ -63,7 +59,6 @@ public class Button extends BaseSprite {
 
     @Override
     public void update(float deltaTime) {
-        super.update(deltaTime);
         current_state = getState();
     }
 
@@ -75,8 +70,7 @@ public class Button extends BaseSprite {
             int hh = getHalfHeight();
 
             if (position.x - hw <= x && x <= position.x + hw && position.y - hh <= y && y <= position.y + hh) {
-                System.out.println( getHeight() + " " + getWidth());
-                if (Gdx.input.isTouched()) {
+                if (Gdx.input.justTouched()) {
                     if (buttonClickListener != null)
                         buttonClickListener.clickEvent();
                     return DOWN;
@@ -109,12 +103,12 @@ public class Button extends BaseSprite {
 
     @Override
     public void dispose() {
-//        if (btnUp != null)
-//            btnUp.dispose();
-//        if (btnOver != null)
-//            btnOver.dispose();
-//        if (btnDown != null)
-//            btnDown.dispose();
+        if (btnUp != null)
+            btnUp.getTexture().dispose();
+        if (btnOver != null)
+            btnOver.getTexture().dispose();
+        if (btnDown != null)
+            btnDown.getTexture().dispose();
     }
 
     public void setBtnUp(TextureRegion btnUp) {

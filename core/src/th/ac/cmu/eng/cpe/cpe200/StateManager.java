@@ -40,4 +40,7 @@ public class StateManager {
             pop();
     }
 
+    public boolean empty() {
+        return states.empty();
+    }
 }
