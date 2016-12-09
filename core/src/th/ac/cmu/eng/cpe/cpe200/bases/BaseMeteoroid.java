@@ -11,7 +11,7 @@ import java.util.Stack;
 public abstract class BaseMeteoroid extends BaseSprite {
 
     private Stack<Integer> hp;
-    protected double radian;
+    private double radian;
     public BaseMeteoroid(AssetManager assetManager) {
         super(assetManager);
     }
@@ -35,12 +35,12 @@ public abstract class BaseMeteoroid extends BaseSprite {
     }
 
     public void getVelocityToCenter() {
-        radian = Math.atan2( getPosition().y- Prefender.HEIGHT/2, getPosition().x - Prefender.WIDTH/2);
+        radian = Math.atan2( getPosition().y - Prefender.HEIGHT/2, getPosition().x - Prefender.WIDTH/2);
         getVelocity().x = (float) -(velocity_scale*Math.cos(radian));
         getVelocity().y = (float) -(velocity_scale*Math.sin(radian));
     }
 
-//    public double getRadian() {
-//        return radian;
-//    }
+    public float getRadian() {
+        return (float) (radian);
+    }
 }

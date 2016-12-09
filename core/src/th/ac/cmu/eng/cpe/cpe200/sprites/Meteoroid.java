@@ -1,9 +1,12 @@
 package th.ac.cmu.eng.cpe.cpe200.sprites;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.MathUtils;
 import th.ac.cmu.eng.cpe.cpe200.Prefender;
 import th.ac.cmu.eng.cpe.cpe200.bases.BaseMeteoroid;
 
@@ -18,6 +21,8 @@ public class Meteoroid extends BaseMeteoroid {
     private boolean isHit = false;                  //เวลาชนโลก
     private boolean isDispose = false;              //เวลาโดนทำลานยแล้ว
     Random rand = new Random();
+    Texture glowBlock ;//= new Texture(Gdx.files.internal("meteoroid1.png"));
+    Sprite glowSprite ;//= new com.badlogic.gdx.graphics.g2d.Sprite(glowBlock);
     public Meteoroid(AssetManager assetManager) {
         super(assetManager);
         randomPosition();
@@ -28,6 +33,10 @@ public class Meteoroid extends BaseMeteoroid {
     public void loadAsset(AssetManager assetManager) {
         if (meteoroidTexture == null) {
             meteoroidTexture = new Texture("meteoroid1.png");
+            glowSprite = new com.badlogic.gdx.graphics.g2d.Sprite(meteoroidTexture);
+            glowSprite.setSize(128,50);
+            glowSprite.setOriginCenter();
+
         }
 
     }
@@ -38,14 +47,18 @@ public class Meteoroid extends BaseMeteoroid {
         getVelocityToCenter();
         getPosition().x += deltaTime * getVelocity().x;
         getPosition().y += deltaTime * getVelocity().y;
-
-
+        glowSprite.setRotation(getRadian() * MathUtils.radiansToDegrees);
+        System.out.println(getRadian() * MathUtils.radiansToDegrees );
+        glowSprite.setPosition(getPosition().x , getPosition().y);
     }
 
     @Override
     public void render(SpriteBatch batch) {
-        batch.draw(meteoroidTexture, getPosition().x - 60 / 2,
-                 getPosition().y - 60 / 2,128,50);
+
+        glowSprite.draw(batch);
+//        batch.draw(meteoroidTexture, getPosition().x - 60 / 2,
+//                 getPosition().y - 60 / 2,128,50);
+
     }
 
     @Override
