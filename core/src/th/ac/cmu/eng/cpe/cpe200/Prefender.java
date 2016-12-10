@@ -3,7 +3,10 @@ package th.ac.cmu.eng.cpe.cpe200;
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -23,6 +26,7 @@ public class Prefender extends ApplicationAdapter {
     public static final int WIDTH = 1200;
     public static final int HEIGHT = 720;
     public static final String TITLE = "Prefender CPE#24";
+    public static int HIGH_SCORE = 0;
 
     private StateManager stateManager;
     private SpriteBatch batch;
@@ -33,12 +37,14 @@ public class Prefender extends ApplicationAdapter {
     private boolean debug;
     private Skin resource;
     private boolean isLoaded;
-    public static boolean playSound = true;
+    public static boolean enableSound = true;
+    private Sound startUpSound;
+    private Music themeSong;
 
     public Prefender(boolean debug) {
         this.debug = debug;
         this.isLoaded = false;
-        playSound = true;
+        enableSound = true;
     }
 
     @Override
@@ -48,11 +54,24 @@ public class Prefender extends ApplicationAdapter {
         else
             Gdx.app.setLogLevel(Application.LOG_NONE);
 
+        // Init Base System
         batch = new SpriteBatch();
         stateManager = new StateManager();
         assetManager = new AssetManager();
         assetManager.load("packed/resource.atlas", TextureAtlas.class);
         loadingImage = new Texture(Gdx.files.internal("resource/loading.png"));
+
+        // Get Save High Score
+        Preferences scorePref = Gdx.app.getPreferences("score");
+        Prefender.HIGH_SCORE = scorePref.getInteger("high_score", 0);
+
+        // Load Sound and Theme Song
+        startUpSound = Gdx.audio.newSound(Gdx.files.internal("resource/sounds/startup.wav"));
+        startUpSound.play();
+        themeSong = Gdx.audio.newMusic(Gdx.files.internal("resource/sounds/theme_song_2.wav"));
+        themeSong.setLooping(true);
+        themeSong.setVolume(0.5f);
+
         splash_time = TimeUtils.millis() + 1000 * 3;
     }
 
@@ -62,9 +81,9 @@ public class Prefender extends ApplicationAdapter {
         resource.addRegions(assetManager.get("packed/resource.atlas", TextureAtlas.class));
 
         backgroundSprite = new BackgroundSprite(resource);
+
         // Begin with Menu
         stateManager.push(new MenuState(stateManager, resource));
-
     }
 
     @Override
@@ -73,6 +92,13 @@ public class Prefender extends ApplicationAdapter {
         float gray = (float) 35 / 255;
         Gdx.gl.glClearColor(gray, gray, gray, 1f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+        // Theme Song Control
+        if(Prefender.enableSound && TimeUtils.millis() > splash_time) {
+            themeSong.play();
+        }else{
+            themeSong.stop();
+        }
 
         // Draw New Frame
         float deltaTime = Gdx.graphics.getDeltaTime();
@@ -90,6 +116,7 @@ public class Prefender extends ApplicationAdapter {
                 state.update(deltaTime);
                 state.render(batch);
             } catch (EmptyStackException e) {
+                Gdx.app.error("MainRenderer", "StateManager is Empty!");
                 stateManager.push(new MenuState(stateManager, resource));
             }
         } else {
@@ -102,11 +129,16 @@ public class Prefender extends ApplicationAdapter {
 
     @Override
     public void dispose() {
+        Preferences scorePref = Gdx.app.getPreferences("score");
+        scorePref.putInteger("high_score", Prefender.HIGH_SCORE);
+        themeSong.stop();
+        themeSong.dispose();
         if (backgroundSprite != null)
             backgroundSprite.dispose();
         if (stateManager != null)
             stateManager.dispose();
         if (batch != null)
             batch.dispose();
+        startUpSound.dispose();
     }
 }

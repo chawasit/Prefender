@@ -1,13 +1,11 @@
 package th.ac.cmu.eng.cpe.cpe200.states;
 
-import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import th.ac.cmu.eng.cpe.cpe200.Prefender;
 import th.ac.cmu.eng.cpe.cpe200.StateManager;
-import th.ac.cmu.eng.cpe.cpe200.bases.BaseSpriteGDX;
 import th.ac.cmu.eng.cpe.cpe200.bases.State;
 import th.ac.cmu.eng.cpe.cpe200.sprites.Button;
 
@@ -23,10 +21,10 @@ public class MenuState extends State {
 
     public MenuState(StateManager stateManager, Skin skin) {
         super(stateManager, skin);
-        init();
     }
 
-    private void init() {
+    @Override
+    public void init() {
         playBtn = new Button(resource);
         playBtn.setBtnUp(resource.getRegion("button/play"));
         playBtn.setBtnDown(resource.getRegion("button/playpress"));
@@ -39,6 +37,7 @@ public class MenuState extends State {
             @Override
             public void clickEvent() {
                 stateManager.popPush(new PlayState(stateManager, resource));
+                Gdx.app.debug("playBtn", "launch Play State");
             }
         });
 
@@ -52,8 +51,8 @@ public class MenuState extends State {
         soundOnBtn.setButtonClickListener(new Button.ButtonClickListener() {
             @Override
             public void clickEvent() {
-                Prefender.playSound = false;
-                System.out.println("sound on click");
+                Prefender.enableSound = false;
+                Gdx.app.debug("soundOnBtn", "sound on click");
             }
         });
 
@@ -67,21 +66,21 @@ public class MenuState extends State {
         soundOffBtn.setButtonClickListener(new Button.ButtonClickListener() {
             @Override
             public void clickEvent() {
-                Prefender.playSound = true;
-                System.out.println("sound off click");
+                Prefender.enableSound = true;
+                Gdx.app.debug("soundOffBtn", "sound off click");
             }
         });
 
         logo = resource.getSprite("logo/logo");
         logo.setScale((float) 0.5);
         logo.setOriginCenter();
-        logo.setPosition(Prefender.WIDTH/2 - logo.getWidth()/2, Prefender.HEIGHT/2);
+        logo.setPosition(Prefender.WIDTH / 2 - logo.getWidth() / 2, Prefender.HEIGHT / 2);
     }
 
     @Override
     public void update(float deltaTime) {
         playBtn.update(deltaTime);
-        if(Prefender.playSound)
+        if (Prefender.enableSound)
             soundOnBtn.update(deltaTime);
         else
             soundOffBtn.update(deltaTime);
@@ -90,17 +89,15 @@ public class MenuState extends State {
     @Override
     public void render(SpriteBatch batch) {
         playBtn.render(batch);
-        if(Prefender.playSound)
+        if (Prefender.enableSound)
             soundOnBtn.render(batch);
         else
             soundOffBtn.render(batch);
-
         logo.draw(batch);
     }
 
     @Override
     public void dispose() {
-        playBtn.dispose();
-        soundOnBtn.dispose();
+
     }
 }

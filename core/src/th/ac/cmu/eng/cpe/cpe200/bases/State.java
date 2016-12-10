@@ -17,7 +17,10 @@ public abstract class State {
     public State(StateManager stateManager, Skin skin) {
         this.stateManager = stateManager;
         this.resource = skin;
+        init();
     }
+
+    public abstract void init();
 
     public abstract void update(float deltaTime);
 

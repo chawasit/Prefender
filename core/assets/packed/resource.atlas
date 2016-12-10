@@ -130,6 +130,61 @@ earth/5
   index: -1
 
 resource4.png
+size: 4096,512
+format: RGBA8888
+filter: MipMapLinearLinear,MipMapLinearLinear
+repeat: none
+gesture/caret
+  rotate: false
+  xy: 2, 2
+  size: 421, 419
+  orig: 421, 419
+  offset: 0, 0
+  index: -1
+gesture/circle
+  rotate: false
+  xy: 1267, 11
+  size: 413, 410
+  orig: 413, 410
+  offset: 0, 0
+  index: -1
+gesture/horizontal
+  rotate: false
+  xy: 2094, 52
+  size: 409, 369
+  orig: 409, 369
+  offset: 0, 0
+  index: -1
+gesture/rectangle
+  rotate: false
+  xy: 848, 8
+  size: 417, 413
+  orig: 417, 413
+  offset: 0, 0
+  index: -1
+gesture/triangle
+  rotate: false
+  xy: 425, 2
+  size: 421, 419
+  orig: 421, 419
+  offset: 0, 0
+  index: -1
+gesture/tunder
+  rotate: false
+  xy: 1682, 8
+  size: 410, 413
+  orig: 410, 413
+  offset: 0, 0
+  index: -1
+gesture/verizontal
+  rotate: false
+  xy: 2505, 17
+  size: 371, 404
+  orig: 371, 404
+  offset: 0, 0
+  index: -1
+
+resource5.png
 size: 2048,512
 format: RGBA8888
 filter: MipMapLinearLinear,MipMapLinearLinear
@@ -142,7 +197,7 @@ logo/logo
   offset: 0, 0
   index: -1
 
-resource5.png
+resource6.png
 size: 2048,1024
 format: RGBA8888
 filter: MipMapLinearLinear,MipMapLinearLinear
@@ -197,7 +252,7 @@ meteoroid/shilde
   offset: 0, 0
   index: -1
 
-resource6.png
+resource7.png
 size: 2048,2048
 format: RGBA8888
 filter: MipMapLinearLinear,MipMapLinearLinear

@@ -1,8 +1,6 @@
 package th.ac.cmu.eng.cpe.cpe200.states;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.InputProcessor;
-import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.GridPoint2;
@@ -10,7 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import th.ac.cmu.eng.cpe.cpe200.Prefender;
 import th.ac.cmu.eng.cpe.cpe200.StateManager;
 import th.ac.cmu.eng.cpe.cpe200.bases.State;
-import th.ac.cmu.eng.cpe.cpe200.sprites.HudSprite;
+import th.ac.cmu.eng.cpe.cpe200.sprites.*;
 import th.ac.cmu.eng.cpe.cpe200.utils.GestureDetection;
 
 /**
@@ -18,91 +16,108 @@ import th.ac.cmu.eng.cpe.cpe200.utils.GestureDetection;
  */
 public class PlayState extends State {
 
+    private static final String TAG = PlayState.class.getSimpleName();
+
     private GestureDetection gestureDetection;
-    private boolean isStarted;
     private ParticleEffect mouseEffect;
     private HudSprite hudSprite;
-
-    InputProcessor inputProcessor = new InputProcessor() {
-        @Override
-        public boolean keyDown(int keycode) {
-            return false;
-        }
-
-        @Override
-        public boolean keyUp(int keycode) {
-            return false;
-        }
-
-        @Override
-        public boolean keyTyped(char character) {
-            return false;
-        }
-
-        @Override
-        public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-            gestureDetection.init(new GridPoint2(screenX, screenY));
-            mouseEffect.setPosition(screenX, Prefender.HEIGHT - screenY);
-            mouseEffect.start();
-            return true;
-        }
-
-        @Override
-        public boolean touchUp(int screenX, int screenY, int pointer, int button) {
-            mouseEffect.setPosition(-500, -500);
-            int attackId = gestureDetection.finish();
-            System.out.println("Attack: " + attackId);
-            return true;
-        }
-
-        @Override
-        public boolean touchDragged(int screenX, int screenY, int pointer) {
-            gestureDetection.addPoint(new GridPoint2(screenX, screenY));
-            mouseEffect.setPosition(screenX, Prefender.HEIGHT - screenY);
-            return true;
-        }
-
-        @Override
-        public boolean mouseMoved(int screenX, int screenY) {
-            return false;
-        }
-
-        @Override
-        public boolean scrolled(int amount) {
-            return false;
-        }
-    };
+    private boolean isTouch;
+    private EarthSprite earth;
+    private MeteoroidManager meteoroidManager;
+    private Button playBtn;
+    private static final int BASE_SCORE = 10;
 
 
     public PlayState(StateManager stateManager, Skin skin) {
         super(stateManager, skin);
-        init();
     }
 
-    private void init() {
+    @Override
+    public void init() {
+        Gdx.app.debug(TAG, "init ...");
         hudSprite = new HudSprite(resource);
-
         gestureDetection = new GestureDetection();
+        isTouch = false;
+//        Gdx.input.setInputProcessor(inputProcessor);
 
-        Gdx.input.setInputProcessor(inputProcessor);
-
+        // Touch Effect
         mouseEffect = new ParticleEffect();
         mouseEffect.load(Gdx.files.internal("resource/particles/click_effect.p"),
                 Gdx.files.internal("resource/particles/img"));
         mouseEffect.setPosition(-500, -500);
+
+        // EarthSprite
+        earth = new EarthSprite(resource);
+
+        meteoroidManager = new MeteoroidManager(earth, resource);
+
+        playBtn = new Button(resource);
+        playBtn.setBtnUp(resource.getRegion("button/play"));
+        playBtn.setBtnDown(resource.getRegion("button/playpress"));
+        playBtn.setBtnOver(resource.getRegion("button/playpress"));
+        playBtn.setCustomHeight(76);
+        playBtn.setCustomWidth(259);
+        playBtn.setPosition(Prefender.WIDTH / 2, Prefender.HEIGHT / 2 - 240);
+
+        playBtn.setButtonClickListener(new Button.ButtonClickListener() {
+            @Override
+            public void clickEvent() {
+                stateManager.popPush(new PlayState(stateManager, resource));
+                Gdx.app.debug("playBtn", "launch Play State");
+            }
+        });
+
     }
 
     @Override
     public void update(float deltaTime) {
         mouseEffect.update(deltaTime);
+
+        if(!earth.isDead()) {
+            // Touch Event
+            if (Gdx.input.justTouched()) {
+                isTouch = true;
+                gestureDetection.init(new GridPoint2(Gdx.input.getX(), Gdx.input.getY()));
+                mouseEffect.setPosition(Gdx.input.getX(), Prefender.HEIGHT - Gdx.input.getY());
+                mouseEffect.start();
+            } else if (Gdx.input.isTouched()) {
+                gestureDetection.addPoint(new GridPoint2(Gdx.input.getX(), Gdx.input.getY()));
+                mouseEffect.setPosition(Gdx.input.getX(), Prefender.HEIGHT - Gdx.input.getY());
+            } else if(isTouch) {
+                isTouch = false;
+                mouseEffect.setPosition(-500, -500);
+                int attack = gestureDetection.finish();
+                int count = meteoroidManager.attacked(attack);
+                int score = 0;
+                if(count>1)
+                    score = BASE_SCORE*count*3/2;
+                else
+                    score = BASE_SCORE;
+                hudSprite.addScore(score);
+                Gdx.app.debug(TAG, "Attack: " + attack);
+            }
+
+            meteoroidManager.update(deltaTime);
+        }else{
+            // Freeze Everything
+            hudSprite.gameOver();
+            playBtn.update(deltaTime);
+        }
+
         hudSprite.update(deltaTime);
     }
 
     @Override
     public void render(SpriteBatch batch) {
-        mouseEffect.draw(batch);
-        gestureDetection.render(batch);
+        earth.render(batch);
+        meteoroidManager.render(batch);
         hudSprite.render(batch);
+        if(!earth.isDead()) {
+            mouseEffect.draw(batch);
+            gestureDetection.render(batch);
+        }else{
+            playBtn.render(batch);
+        }
     }
 
     @Override

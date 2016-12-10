@@ -24,14 +24,15 @@ public class ScoreEffectSprite extends BaseSprite {
         super(skin);
         this.score = score;
         this.refPosition = refPosition;
+        position = refPosition;
+        position.y -= 100;
     }
 
     @Override
     public void init() {
         start_time = TimeUtils.millis()+SCORING_TIME;
         font = new BitmapFont();
-        position = refPosition;
-        position.y -= 100;
+
     }
 
     @Override

@@ -51,6 +51,7 @@ public class GestureDetection {
     }
 
     public void render(SpriteBatch batch) {
+//        Gdx.app.debug(TAG, "Render");
         if (pixmap != null) {
             if (touchLine != null)
                 touchLine.dispose();
@@ -66,6 +67,7 @@ public class GestureDetection {
      * @param firstPoint
      */
     public void init(GridPoint2 firstPoint) {
+        Gdx.app.debug(TAG, "init");
         createPixmap();
         histogram = new int[9];
         lastTouchPoint = firstPoint;
@@ -78,6 +80,7 @@ public class GestureDetection {
      * จบการทำงาน เคลียร์ค่าต่าง ๆ
      */
     public int finish() {
+        Gdx.app.debug(TAG, "finish");
         if (pixmap != null)
             pixmap.dispose();
         pixmap = null;
@@ -93,6 +96,7 @@ public class GestureDetection {
      * @param newPoint
      */
     public void addPoint(GridPoint2 newPoint) {
+        Gdx.app.debug(TAG, "add point "+newPoint);
         if(pixmap == null)
             return;
         // Draw Line between point

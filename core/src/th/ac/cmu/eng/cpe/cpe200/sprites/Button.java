@@ -1,7 +1,7 @@
 package th.ac.cmu.eng.cpe.cpe200.sprites;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
@@ -23,6 +23,7 @@ public class Button extends BaseSprite {
     private int customWidth = -1;
     private ButtonClickListener buttonClickListener;
     private int current_state;
+    private Sound clickSound;
 
     public Button(Skin skin) {
         super(skin);
@@ -30,7 +31,7 @@ public class Button extends BaseSprite {
 
     @Override
     public void init() {
-
+        clickSound = Gdx.audio.newSound(Gdx.files.internal("resource/sounds/button_sound_3.wav"));
     }
 
     private int getHeight() {
@@ -71,6 +72,8 @@ public class Button extends BaseSprite {
 
             if (position.x - hw <= x && x <= position.x + hw && position.y - hh <= y && y <= position.y + hh) {
                 if (Gdx.input.justTouched()) {
+                    if (Prefender.enableSound)
+                        clickSound.play();
                     if (buttonClickListener != null)
                         buttonClickListener.clickEvent();
                     return DOWN;
@@ -109,6 +112,7 @@ public class Button extends BaseSprite {
             btnOver.getTexture().dispose();
         if (btnDown != null)
             btnDown.getTexture().dispose();
+        clickSound.dispose();
     }
 
     public void setBtnUp(TextureRegion btnUp) {
@@ -136,7 +140,7 @@ public class Button extends BaseSprite {
     }
 
     public void setPosition(int x, int y) {
-        position.set(x,y);
+        position.set(x, y);
     }
 
     public interface ButtonClickListener {
