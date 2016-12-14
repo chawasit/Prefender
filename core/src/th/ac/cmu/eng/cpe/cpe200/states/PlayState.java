@@ -1,8 +1,12 @@
 package th.ac.cmu.eng.cpe.cpe200.states;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.math.GridPoint2;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import th.ac.cmu.eng.cpe.cpe200.Prefender;
@@ -17,7 +21,7 @@ import th.ac.cmu.eng.cpe.cpe200.utils.GestureDetection;
 public class PlayState extends State {
 
     private static final String TAG = PlayState.class.getSimpleName();
-
+    private static final int BASE_SCORE = 10;
     private GestureDetection gestureDetection;
     private ParticleEffect mouseEffect;
     private HudSprite hudSprite;
@@ -25,7 +29,8 @@ public class PlayState extends State {
     private EarthSprite earth;
     private MeteoroidManager meteoroidManager;
     private Button playBtn;
-    private static final int BASE_SCORE = 10;
+    private int combo;
+    private Sound[] comboSound;
 
 
     public PlayState(StateManager stateManager, Skin skin) {
@@ -38,7 +43,6 @@ public class PlayState extends State {
         hudSprite = new HudSprite(resource);
         gestureDetection = new GestureDetection();
         isTouch = false;
-//        Gdx.input.setInputProcessor(inputProcessor);
 
         // Touch Effect
         mouseEffect = new ParticleEffect();
@@ -57,7 +61,7 @@ public class PlayState extends State {
         playBtn.setBtnOver(resource.getRegion("button/playpress"));
         playBtn.setCustomHeight(76);
         playBtn.setCustomWidth(259);
-        playBtn.setPosition(Prefender.WIDTH / 2, Prefender.HEIGHT / 2 - 240);
+        playBtn.setPosition(Prefender.WIDTH / 2, Prefender.HEIGHT / 2 - 200);
 
         playBtn.setButtonClickListener(new Button.ButtonClickListener() {
             @Override
@@ -67,14 +71,23 @@ public class PlayState extends State {
             }
         });
 
+        combo = 0;
+
+        comboSound = new Sound[9];
+        for (int i = 0; i < 9; i++) {
+            comboSound[i] = Gdx.audio.newSound(Gdx.files.internal("resource/sounds/combo" + (i + 1) + ".mp3"));
+        }
+
     }
 
     @Override
     public void update(float deltaTime) {
         mouseEffect.update(deltaTime);
+        earth.update(deltaTime);
 
-        if(!earth.isDead()) {
+        if (!earth.isDead()) {
             // Touch Event
+            mouseEffect.setPosition(-500, -500);
             if (Gdx.input.justTouched()) {
                 isTouch = true;
                 gestureDetection.init(new GridPoint2(Gdx.input.getX(), Gdx.input.getY()));
@@ -83,46 +96,53 @@ public class PlayState extends State {
             } else if (Gdx.input.isTouched()) {
                 gestureDetection.addPoint(new GridPoint2(Gdx.input.getX(), Gdx.input.getY()));
                 mouseEffect.setPosition(Gdx.input.getX(), Prefender.HEIGHT - Gdx.input.getY());
-            } else if(isTouch) {
+            } else if (isTouch) {
                 isTouch = false;
                 mouseEffect.setPosition(-500, -500);
                 int attack = gestureDetection.finish();
                 int count = meteoroidManager.attacked(attack);
                 int score = 0;
-                if(count>1)
-                    score = BASE_SCORE*count*3/2;
+                if(attack == 4 && count > 0)
+                    earth.heal(count);
+                if (count > 0 && combo < comboSound.length-1)
+                    combo++;
                 else
-                    score = BASE_SCORE;
+                    combo = 0;
+                comboSound[combo].play();
+                combo++;
+                if (count > 1) {
+                    score = BASE_SCORE * count * 3 / 2 + 2 * combo;
+                } else if (count == 1) {
+                    score = BASE_SCORE + 2 * combo;
+                }
                 hudSprite.addScore(score);
                 Gdx.app.debug(TAG, "Attack: " + attack);
             }
 
             meteoroidManager.update(deltaTime);
-        }else{
+        } else {
             // Freeze Everything
             hudSprite.gameOver();
             playBtn.update(deltaTime);
         }
-
         hudSprite.update(deltaTime);
     }
 
     @Override
     public void render(SpriteBatch batch) {
         earth.render(batch);
-        meteoroidManager.render(batch);
         hudSprite.render(batch);
-        if(!earth.isDead()) {
+        meteoroidManager.render(batch);
+        if (!earth.isDead()) {
             mouseEffect.draw(batch);
             gestureDetection.render(batch);
-        }else{
+        } else {
             playBtn.render(batch);
         }
     }
 
     @Override
     public void dispose() {
-        Gdx.input.setInputProcessor(null);
         gestureDetection = null;
     }
 }

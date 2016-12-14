@@ -9,8 +9,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import th.ac.cmu.eng.cpe.cpe200.Prefender;
 import th.ac.cmu.eng.cpe.cpe200.bases.BaseSprite;
 
-import static sun.jvm.hotspot.runtime.PerfMemory.initialized;
-
 /**
  * Created by zalzer on 11/8/2016 AD.
  */

@@ -23,11 +23,11 @@ public class Prefender extends ApplicationAdapter {
 
     public static final String TAG = Prefender.class.getSimpleName();
 
-    public static final int WIDTH = 1200;
-    public static final int HEIGHT = 720;
+    public static final int WIDTH = 1200 * 10 / 12;
+    public static final int HEIGHT = 720 * 10 / 12;
     public static final String TITLE = "Prefender CPE#24";
     public static int HIGH_SCORE = 0;
-
+    public static boolean enableSound = true;
     private StateManager stateManager;
     private SpriteBatch batch;
     private AssetManager assetManager;
@@ -37,7 +37,6 @@ public class Prefender extends ApplicationAdapter {
     private boolean debug;
     private Skin resource;
     private boolean isLoaded;
-    public static boolean enableSound = true;
     private Sound startUpSound;
     private Music themeSong;
 
@@ -49,7 +48,7 @@ public class Prefender extends ApplicationAdapter {
 
     @Override
     public void create() {
-        if(debug)
+        if (debug)
             Gdx.app.setLogLevel(Application.LOG_DEBUG);
         else
             Gdx.app.setLogLevel(Application.LOG_NONE);
@@ -59,7 +58,7 @@ public class Prefender extends ApplicationAdapter {
         stateManager = new StateManager();
         assetManager = new AssetManager();
         assetManager.load("packed/resource.atlas", TextureAtlas.class);
-        loadingImage = new Texture(Gdx.files.internal("resource/loading.png"));
+        loadingImage = new Texture(Gdx.files.internal("resource/loading1000x600.png"));
 
         // Get Save High Score
         Preferences scorePref = Gdx.app.getPreferences("score");
@@ -68,7 +67,7 @@ public class Prefender extends ApplicationAdapter {
         // Load Sound and Theme Song
         startUpSound = Gdx.audio.newSound(Gdx.files.internal("resource/sounds/startup.wav"));
         startUpSound.play();
-        themeSong = Gdx.audio.newMusic(Gdx.files.internal("resource/sounds/theme_song_2.wav"));
+        themeSong = Gdx.audio.newMusic(Gdx.files.internal("resource/sounds/theme_song_2.mp3"));
         themeSong.setLooping(true);
         themeSong.setVolume(0.5f);
 
@@ -94,9 +93,9 @@ public class Prefender extends ApplicationAdapter {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         // Theme Song Control
-        if(Prefender.enableSound && TimeUtils.millis() > splash_time) {
+        if (Prefender.enableSound && TimeUtils.millis() > splash_time) {
             themeSong.play();
-        }else{
+        } else {
             themeSong.stop();
         }
 
@@ -105,7 +104,7 @@ public class Prefender extends ApplicationAdapter {
         batch.begin();
 
         if (assetManager.update() && TimeUtils.millis() > splash_time) {
-            if(!isLoaded)
+            if (!isLoaded)
                 init();
             // BackgroundSprite Space wew~
             backgroundSprite.update(deltaTime);
@@ -131,6 +130,7 @@ public class Prefender extends ApplicationAdapter {
     public void dispose() {
         Preferences scorePref = Gdx.app.getPreferences("score");
         scorePref.putInteger("high_score", Prefender.HIGH_SCORE);
+        scorePref.flush();
         themeSong.stop();
         themeSong.dispose();
         if (backgroundSprite != null)

@@ -47,7 +47,7 @@ public class MenuState extends State {
         soundOnBtn.setBtnOver(resource.getRegion("button/speakerpress"));
         soundOnBtn.setCustomHeight(76);
         soundOnBtn.setCustomWidth(259);
-        soundOnBtn.setPosition(Prefender.WIDTH / 2, Prefender.HEIGHT / 2 - 200);
+        soundOnBtn.setPosition(Prefender.WIDTH / 2, Prefender.HEIGHT / 2 - 100);
         soundOnBtn.setButtonClickListener(new Button.ButtonClickListener() {
             @Override
             public void clickEvent() {
@@ -62,7 +62,7 @@ public class MenuState extends State {
         soundOffBtn.setBtnOver(resource.getRegion("button/offspeakerpress"));
         soundOffBtn.setCustomHeight(76);
         soundOffBtn.setCustomWidth(259);
-        soundOffBtn.setPosition(Prefender.WIDTH / 2, Prefender.HEIGHT / 2 - 200);
+        soundOffBtn.setPosition(Prefender.WIDTH / 2, Prefender.HEIGHT / 2 - 100);
         soundOffBtn.setButtonClickListener(new Button.ButtonClickListener() {
             @Override
             public void clickEvent() {
@@ -72,7 +72,7 @@ public class MenuState extends State {
         });
 
         logo = resource.getSprite("logo/logo");
-        logo.setScale((float) 0.5);
+        logo.setScale((float) 0.3);
         logo.setOriginCenter();
         logo.setPosition(Prefender.WIDTH / 2 - logo.getWidth() / 2, Prefender.HEIGHT / 2);
     }

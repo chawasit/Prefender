@@ -1,6 +1,7 @@
 package th.ac.cmu.eng.cpe.cpe200.sprites;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -81,7 +82,7 @@ public class HudSprite extends BaseSprite {
             font.draw(batch, layout, Prefender.WIDTH/2 - layout.width/2, Prefender.HEIGHT/2 - layout.height/2-50);
 
             layout.setText(font, "GAME OVER");
-            font.draw(batch, layout, Prefender.WIDTH/2 - layout.width/2, Prefender.HEIGHT/2 - layout.height/2+240);
+            font.draw(batch, layout, Prefender.WIDTH/2 - layout.width/2, Prefender.HEIGHT/2 - layout.height/2+200);
         }else {
             layout.setText(font, "High Score");
             font.draw(batch, layout, HUD_GAP, Prefender.HEIGHT - HUD_GAP);
@@ -120,6 +121,12 @@ public class HudSprite extends BaseSprite {
 
 
     public void gameOver() {
+//        if(!gameOver) {
+//            Preferences scorePref = Gdx.app.getPreferences("score");
+//            scorePref.putInteger("high_score", Prefender.HIGH_SCORE);
+//            scorePref.flush();
+//        }
         gameOver = true;
+
     }
 }

@@ -89,41 +89,69 @@ button/trophypress
   index: -1
 
 resource3.png
-size: 4096,2048
+size: 4096,4096
 format: RGBA8888
 filter: MipMapLinearLinear,MipMapLinearLinear
 repeat: none
 earth/1
   rotate: false
-  xy: 2, 881
+  xy: 2, 2639
   size: 877, 877
   orig: 877, 877
   offset: 0, 0
   index: -1
 earth/2
   rotate: false
-  xy: 2, 2
+  xy: 2, 1760
   size: 877, 877
   orig: 877, 877
   offset: 0, 0
   index: -1
 earth/3
   rotate: false
-  xy: 881, 881
+  xy: 881, 2639
   size: 877, 877
   orig: 877, 877
   offset: 0, 0
   index: -1
 earth/4
   rotate: false
-  xy: 881, 2
+  xy: 2, 881
   size: 877, 877
   orig: 877, 877
   offset: 0, 0
   index: -1
 earth/5
   rotate: false
-  xy: 1760, 881
+  xy: 881, 1760
+  size: 877, 877
+  orig: 877, 877
+  offset: 0, 0
+  index: -1
+earth/b1
+  rotate: false
+  xy: 1760, 2639
+  size: 877, 877
+  orig: 877, 877
+  offset: 0, 0
+  index: -1
+earth/b2
+  rotate: false
+  xy: 2, 2
+  size: 877, 877
+  orig: 877, 877
+  offset: 0, 0
+  index: -1
+earth/b3
+  rotate: false
+  xy: 881, 881
+  size: 877, 877
+  orig: 877, 877
+  offset: 0, 0
+  index: -1
+earth/b4
+  rotate: false
+  xy: 1760, 1760
   size: 877, 877
   orig: 877, 877
   offset: 0, 0
@@ -162,6 +190,13 @@ gesture/rectangle
   orig: 417, 413
   offset: 0, 0
   index: -1
+gesture/thunder
+  rotate: false
+  xy: 1682, 8
+  size: 410, 413
+  orig: 410, 413
+  offset: 0, 0
+  index: -1
 gesture/triangle
   rotate: false
   xy: 425, 2
@@ -169,18 +204,11 @@ gesture/triangle
   orig: 421, 419
   offset: 0, 0
   index: -1
-gesture/tunder
-  rotate: false
-  xy: 1682, 8
-  size: 410, 413
-  orig: 410, 413
-  offset: 0, 0
-  index: -1
 gesture/verizontal
   rotate: false
-  xy: 2505, 17
-  size: 371, 404
-  orig: 371, 404
+  xy: 2505, 121
+  size: 300, 300
+  orig: 300, 300
   offset: 0, 0
   index: -1
 
@@ -198,55 +226,83 @@ logo/logo
   index: -1
 
 resource6.png
-size: 2048,1024
+size: 4096,1024
 format: RGBA8888
 filter: MipMapLinearLinear,MipMapLinearLinear
 repeat: none
 meteoroid/1
   rotate: false
-  xy: 2, 241
+  xy: 2, 2
   size: 645, 251
   orig: 645, 251
   offset: 0, 0
   index: -1
 meteoroid/2
   rotate: false
-  xy: 984, 761
+  xy: 984, 522
   size: 645, 251
   orig: 645, 251
   offset: 0, 0
   index: -1
 meteoroid/3
   rotate: false
-  xy: 984, 508
+  xy: 984, 269
   size: 645, 251
   orig: 645, 251
   offset: 0, 0
   index: -1
 meteoroid/4
   rotate: false
-  xy: 984, 255
+  xy: 1631, 522
   size: 645, 251
   orig: 645, 251
   offset: 0, 0
   index: -1
 meteoroid/5
   rotate: false
-  xy: 649, 2
+  xy: 1631, 269
   size: 645, 251
   orig: 645, 251
   offset: 0, 0
   index: -1
+meteoroid/b1
+  rotate: false
+  xy: 2278, 270
+  size: 644, 250
+  orig: 644, 250
+  offset: 0, 0
+  index: -1
+meteoroid/b2
+  rotate: false
+  xy: 2924, 523
+  size: 644, 250
+  orig: 644, 250
+  offset: 0, 0
+  index: -1
+meteoroid/b3
+  rotate: false
+  xy: 2924, 271
+  size: 644, 250
+  orig: 644, 250
+  offset: 0, 0
+  index: -1
+meteoroid/b4
+  rotate: false
+  xy: 2278, 522
+  size: 644, 251
+  orig: 644, 251
+  offset: 0, 0
+  index: -1
 meteoroid/lightning
   rotate: false
-  xy: 2, 494
+  xy: 2, 255
   size: 489, 518
   orig: 489, 518
   offset: 0, 0
   index: -1
-meteoroid/shilde
+meteoroid/shield
   rotate: false
-  xy: 493, 494
+  xy: 493, 255
   size: 489, 518
   orig: 489, 518
   offset: 0, 0

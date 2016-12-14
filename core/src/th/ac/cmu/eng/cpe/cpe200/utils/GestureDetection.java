@@ -21,6 +21,7 @@ public class GestureDetection {
     private static final int GRID_DIAMETER = 10;
     private static final double MAX_ERROR = 0.20d;
     private static final int CIRCLE_RADIUS = 3;
+    private static final float adjustGestureAngle = 10; // must < 22
 
     int[] histogram;
 
@@ -96,8 +97,8 @@ public class GestureDetection {
      * @param newPoint
      */
     public void addPoint(GridPoint2 newPoint) {
-        Gdx.app.debug(TAG, "add point "+newPoint);
-        if(pixmap == null)
+        Gdx.app.debug(TAG, "add point " + newPoint);
+        if (pixmap == null)
             return;
         // Draw Line between point
         for (GridPoint2 p :
@@ -128,21 +129,21 @@ public class GestureDetection {
 
     private void addHistogram(double degree) {
         histogram[8]++;
-        if (degree <= 22.5 && degree >= -22.5) {
+        if (degree <= 22.5 - adjustGestureAngle && degree >= -22.5 + adjustGestureAngle) {
             histogram[0]++; // RIGHT
-        } else if (degree >= -180 && degree <= -157.5 || degree <= 180 && degree >= 157.5) {
+        } else if (degree >= -180 && degree <= -157.5 - adjustGestureAngle || degree <= 180 && degree >= 157.5 + adjustGestureAngle) {
             histogram[1]++; // LEFT
-        } else if (degree <= -67.5 && degree >= -112.5) {
+        } else if (degree <= -67.5 - adjustGestureAngle && degree >= -112.5 + adjustGestureAngle) {
             histogram[2]++; // UP
-        } else if (degree <= 112.5 && degree >= 67.5) {
+        } else if (degree <= 112.5 - adjustGestureAngle && degree >= 67.5 + adjustGestureAngle) {
             histogram[3]++; // DOWN
-        } else if (degree <= -22.5 && degree >= -67.5) {
+        } else if (degree <= -22.5 + adjustGestureAngle && degree >= -67.5 - adjustGestureAngle) {
             histogram[4]++; // UP-RIGHT
-        } else if (degree <= 67.5 && degree >= 22.5) {
+        } else if (degree <= 67.5 + adjustGestureAngle && degree >= 22.5 - adjustGestureAngle) {
             histogram[5]++; // DOWN-RIGHT
-        } else if (degree <= -112.5 && degree >= -157.5) {
+        } else if (degree <= -112.5 + adjustGestureAngle && degree >= -157.5 - adjustGestureAngle) {
             histogram[6]++; // UP-LEFT
-        } else if (degree <= 157.5 && degree >= 112.5) {
+        } else if (degree <= 157.5 + adjustGestureAngle && degree >= 112.5 - adjustGestureAngle) {
             histogram[7]++; // DOWN-LEFT
         } else {
             histogram[8]--;
@@ -207,15 +208,12 @@ public class GestureDetection {
                 pixmap.setColor(Color.GREEN);
                 break;
             case 3:
-                pixmap.setColor(Color.PURPLE);
-                break;
-            case 4:
                 pixmap.setColor(Color.CYAN);
                 break;
-            case 5:
+            case 4:
                 pixmap.setColor(Color.PINK);
                 break;
-            case 6:
+            case 5:
                 pixmap.setColor(Color.YELLOW);
                 break;
             default:
