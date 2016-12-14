@@ -49,6 +49,7 @@ public class MeteoroidManager {
         this.earthSprite = earthSprite;
         this.resource = resource;
 
+        // Default Value
         mMaxSize = 3;
         mVelocity = 50;
         mBatchSize = 2;
@@ -91,14 +92,14 @@ public class MeteoroidManager {
 
     public void update(float deltaTime) {
         levelTime += deltaTime;
-        if(levelTime<3)
+        if (levelTime < 3)
             return;
         waveTime += deltaTime;
 
         if (level < gameLevelManager.level.length) {
             if (meteoroidID < gameLevelManager.level[level][wave].length) {
                 GameLevelManager.MeteoroidSpec spec = gameLevelManager.level[level][wave][meteoroidID];
-                if ((float) spec.delay/1000f <= waveTime) {
+                if ((float) spec.delay / 1000f <= waveTime) {
                     Gdx.app.log(TAG, "New Meteoroid (v:" + mVelocity + ", hp:" + spec.hp.toString() +
                             ", positon:" + spec.position + ", delay:" + spec.delay);
                     meteoroids.add(new Meteoroid(resource, mVelocity, spec.hp, spec.position));
@@ -159,9 +160,12 @@ public class MeteoroidManager {
 
         if (levelTime < 1.700) {
             GlyphLayout layout = new GlyphLayout();
-            if(level<gameLevelManager.level.length) {
-                layout.setText(font, "LEVEL: " + (level + 1));
-            }else {
+            if (level < gameLevelManager.level.length) {
+                if (level + 1 == gameLevelManager.level.length)
+                    layout.setText(font, "FINAL LEVEL");
+                else
+                    layout.setText(font, "LEVEL: " + (level + 1));
+            } else {
                 layout.setText(font, "BONUS Wave!");
             }
             font.draw(batch, layout, Prefender.WIDTH / 2 - layout.width / 2, Prefender.HEIGHT / 2 - layout.height / 2 + 100);

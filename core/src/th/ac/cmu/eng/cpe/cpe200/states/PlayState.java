@@ -102,13 +102,14 @@ public class PlayState extends State {
                 int attack = gestureDetection.finish();
                 int count = meteoroidManager.attacked(attack);
                 int score = 0;
-                if(attack == 4 && count > 0)
+                if (attack == 4 && count > 0)
                     earth.heal(count);
-                if (count > 0 && combo < comboSound.length-1)
+                if (count > 0 && combo < comboSound.length - 1)
                     combo++;
                 else
                     combo = 0;
-                comboSound[combo].play();
+                if (Prefender.enableSound)
+                    comboSound[combo].play();
                 combo++;
                 if (count > 1) {
                     score = BASE_SCORE * count * 3 / 2 + 2 * combo;

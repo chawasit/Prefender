@@ -10,17 +10,6 @@ import th.ac.cmu.eng.cpe.cpe200.Prefender;
 
 public class DesktopLauncher {
     public static void main(String[] arg) {
-
-        TexturePacker.Settings settings = new TexturePacker.Settings();
-        settings.maxWidth = 4096;
-        settings.maxHeight = 4096;
-        settings.filterMag = Texture.TextureFilter.MipMapLinearLinear;
-        settings.filterMin = Texture.TextureFilter.MipMapLinearLinear;
-//        TexturePacker.process(settings, "resource", "packed", "resource");
-//        TexturePacker.process(settings, "resource/particles/img", "packed", "particles");
-//        TexturePacker.process(settings, "resource/button", "packed", "button");
-//        TexturePacker.process(settings, "resource/meteoroid", "packed", "meteoroid");
-
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 
         config.width = Prefender.WIDTH;

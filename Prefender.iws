@@ -2,71 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9266749f-8316-4be0-94e8-622884fb255b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/assets/resource/loading1000x600.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/assets/resource/sounds/PrefenderSound.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/assets/resource/sounds/attack.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/assets/resource/sounds/attack.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/assets/resource/sounds/combo1.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/assets/resource/sounds/combo2.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/assets/resource/sounds/combo3.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/assets/resource/sounds/combo4.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/assets/resource/sounds/combo5.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/assets/resource/sounds/combo6.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/assets/resource/sounds/combo7.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/assets/resource/sounds/combo8.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/assets/resource/sounds/combo9.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/assets/resource/sounds/theme_song_2.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/assets/resource/sounds/thunder.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/packr.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/utils/GameLevelManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/desktop/src/th/ac/cmu/eng/cpe/cpe200/desktop/PackrGenerator.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/button/offspeaker.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/button/offspeakerpress.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/button/pause.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/button/pausepress.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/button/play.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/button/playpress.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/button/speaker.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/button/speakerpress.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/button/trophy.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/button/trophypress.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/earth/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/earth/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/earth/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/earth/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/earth/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/gesture/caret.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/gesture/circle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/gesture/horizontal.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/gesture/rectangle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/gesture/thunder.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/gesture/triangle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/gesture/verizontal.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/logo/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/meteoroid/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/meteoroid/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/meteoroid/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/meteoroid/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/meteoroid/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/meteoroid/lightning.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/meteoroid/shield.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/assets/packed/resource3.png" afterPath="$PROJECT_DIR$/core/assets/packed/resource3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/assets/packed/resource4.png" afterPath="$PROJECT_DIR$/core/assets/packed/resource4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/assets/packed/resource6.png" afterPath="$PROJECT_DIR$/core/assets/packed/resource6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/desktop/desktop_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/desktop/desktop_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prefender.ipr" afterPath="$PROJECT_DIR$/Prefender.ipr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/desktop/src/th/ac/cmu/eng/cpe/cpe200/desktop/PackResource.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/gesture/tunder.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/resource/meteoroid/shilde.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prefender.iws" afterPath="$PROJECT_DIR$/Prefender.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/assets/packed/resource.atlas" afterPath="$PROJECT_DIR$/core/assets/packed/resource.atlas" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/Prefender.java" afterPath="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/Prefender.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/BackgroundSprite.java" afterPath="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/BackgroundSprite.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/EarthSprite.java" afterPath="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/EarthSprite.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/HudSprite.java" afterPath="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/HudSprite.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/Meteoroid.java" afterPath="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/Meteoroid.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/MeteoroidManager.java" afterPath="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/MeteoroidManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/states/MenuState.java" afterPath="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/states/MenuState.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/states/PlayState.java" afterPath="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/states/PlayState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/utils/GestureDetection.java" afterPath="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/utils/GestureDetection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/utils/GestureSample.java" afterPath="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/utils/GestureSample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/desktop/src/th/ac/cmu/eng/cpe/cpe200/desktop/DesktopLauncher.java" afterPath="$PROJECT_DIR$/desktop/src/th/ac/cmu/eng/cpe/cpe200/desktop/DesktopLauncher.java" />
     </list>
     <ignored path="Prefender.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -164,27 +106,39 @@
         <entry file="file://$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/Prefender.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
-              <caret line="126" column="20" selection-start-line="126" selection-start-column="20" selection-end-line="126" selection-end-column="20" />
+              <caret line="125" column="20" selection-start-line="125" selection-start-column="20" selection-end-line="125" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
+            <state relative-caret-position="114">
+              <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PackrGenerator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DesktopLauncher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/desktop/src/th/ac/cmu/eng/cpe/cpe200/desktop/DesktopLauncher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PackrGenerator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/desktop/src/th/ac/cmu/eng/cpe/cpe200/desktop/PackrGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="270">
+              <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -195,18 +149,8 @@
       <file leaf-file-name="HudSprite.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/HudSprite.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="42" column="78" selection-start-line="36" selection-start-column="8" selection-end-line="42" selection-end-column="78" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MenuState.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/states/MenuState.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="74" column="33" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
+            <state relative-caret-position="270">
+              <caret line="44" column="56" selection-start-line="44" selection-start-column="56" selection-end-line="44" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -215,11 +159,11 @@
       <file leaf-file-name="PlayState.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/states/PlayState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
+            <state relative-caret-position="210">
+              <caret line="99" column="32" selection-start-line="99" selection-start-column="32" selection-end-line="99" selection-end-column="32" />
               <folding>
-                <element signature="e#5092#5093#0" expanded="true" />
-                <element signature="e#5131#5132#0" expanded="true" />
+                <element signature="e#5141#5142#0" expanded="true" />
+                <element signature="e#5180#5181#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -228,8 +172,8 @@
       <file leaf-file-name="MeteoroidManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/MeteoroidManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="166" column="122" selection-start-line="166" selection-start-column="122" selection-end-line="166" selection-end-column="122" />
+            <state relative-caret-position="420">
+              <caret line="166" column="48" selection-start-line="166" selection-start-column="48" selection-end-line="166" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -240,42 +184,10 @@
       <file leaf-file-name="GameLevelManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/utils/GameLevelManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="66" column="47" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
+            <state relative-caret-position="60">
+              <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Meteoroid.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/Meteoroid.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2070">
-              <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#8977#8978#0" expanded="true" />
-                <element signature="e#9078#9079#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EarthSprite.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/EarthSprite.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#763#764#0" expanded="true" />
-                <element signature="e#790#791#0" expanded="true" />
-                <element signature="e#2290#2291#0" expanded="true" />
-                <element signature="e#2361#2362#0" expanded="true" />
-                <element signature="e#2498#2499#0" expanded="true" />
-                <element signature="e#2526#2527#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1069,16 +981,17 @@
         <option value="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/BackgroundSprite.java" />
         <option value="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/utils/GestureDetection.java" />
         <option value="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/utils/GestureSample.java" />
-        <option value="$PROJECT_DIR$/desktop/src/th/ac/cmu/eng/cpe/cpe200/desktop/DesktopLauncher.java" />
         <option value="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/EarthSprite.java" />
         <option value="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/states/MenuState.java" />
         <option value="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/HudSprite.java" />
-        <option value="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/states/PlayState.java" />
         <option value="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/Meteoroid.java" />
-        <option value="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/MeteoroidManager.java" />
         <option value="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/utils/GameLevelManager.java" />
         <option value="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/Prefender.java" />
         <option value="$PROJECT_DIR$/desktop/src/th/ac/cmu/eng/cpe/cpe200/desktop/PackrGenerator.java" />
+        <option value="$PROJECT_DIR$/desktop/src/th/ac/cmu/eng/cpe/cpe200/desktop/PackResource.java" />
+        <option value="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/states/PlayState.java" />
+        <option value="$PROJECT_DIR$/desktop/src/th/ac/cmu/eng/cpe/cpe200/desktop/DesktopLauncher.java" />
+        <option value="$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/MeteoroidManager.java" />
       </list>
     </option>
   </component>
@@ -1578,7 +1491,7 @@
       <recent name="$PROJECT_DIR$/core/assets/resource/particles/img" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PackrGenerator">
+  <component name="RunManager" selected="Application.Desktop">
     <configuration default="false" name="ParticleEditor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1989,7 +1902,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479805652153</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="lazy commit 3">
+      <created>1481702428874</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1481702428874</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2061,7 +1981,8 @@
     <MESSAGE value="add missing resource" />
     <MESSAGE value="add debug manager" />
     <MESSAGE value="new base Sprite, Custom Button" />
-    <option name="LAST_COMMIT_MESSAGE" value="new base Sprite, Custom Button" />
+    <MESSAGE value="lazy commit 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="lazy commit 3" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -2074,13 +1995,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="25" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.4/f0e4d245a67fc96707610a4260a325fa034c93d1/gdx-1.9.4-sources.jar!/com/badlogic/gdx/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-13">
@@ -2159,13 +2073,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/assets/packed/resource.atlas">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -2390,16 +2297,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/desktop/src/th/ac/cmu/eng/cpe/cpe200/desktop/DesktopLauncher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="76" selection-start-line="19" selection-start-column="76" selection-end-line="19" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/EarthSprite.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -2424,80 +2321,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/HudSprite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="42" column="78" selection-start-line="36" selection-start-column="8" selection-end-line="42" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/states/PlayState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
-          <folding>
-            <element signature="e#5092#5093#0" expanded="true" />
-            <element signature="e#5131#5132#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/MeteoroidManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="166" column="122" selection-start-line="166" selection-start-column="122" selection-end-line="166" selection-end-column="122" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/Meteoroid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2070">
-          <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8977#8978#0" expanded="true" />
-            <element signature="e#9078#9079#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/utils/GameLevelManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="66" column="47" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/Prefender.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-          <caret line="126" column="20" selection-start-line="126" selection-start-column="20" selection-end-line="126" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
+          <caret line="125" column="20" selection-start-line="125" selection-start-column="20" selection-end-line="125" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/desktop/src/th/ac/cmu/eng/cpe/cpe200/desktop/PackrGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="270">
+          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desktop/src/th/ac/cmu/eng/cpe/cpe200/desktop/PackResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/HudSprite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="44" column="56" selection-start-line="44" selection-start-column="56" selection-end-line="44" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/assets/packed/resource.atlas">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="295" column="19" selection-start-line="295" selection-start-column="19" selection-end-line="295" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desktop/src/th/ac/cmu/eng/cpe/cpe200/desktop/DesktopLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/states/PlayState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="99" column="32" selection-start-line="99" selection-start-column="32" selection-end-line="99" selection-end-column="32" />
+          <folding>
+            <element signature="e#5141#5142#0" expanded="true" />
+            <element signature="e#5180#5181#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/Meteoroid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <caret line="213" column="24" selection-start-line="213" selection-start-column="24" selection-end-line="213" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7292#7293#0" expanded="true" />
+            <element signature="e#7393#7394#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/utils/GameLevelManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/th/ac/cmu/eng/cpe/cpe200/sprites/MeteoroidManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="166" column="48" selection-start-line="166" selection-start-column="48" selection-end-line="166" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
