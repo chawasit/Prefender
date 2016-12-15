@@ -2,11 +2,8 @@ package th.ac.cmu.eng.cpe.cpe200.states;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Sound;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.math.GridPoint2;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import th.ac.cmu.eng.cpe.cpe200.Prefender;
@@ -27,7 +24,7 @@ public class PlayState extends State {
     private HudSprite hudSprite;
     private boolean isTouch;
     private EarthSprite earth;
-    private MeteoroidManager meteoroidManager;
+    private SpriteManager spriteManager;
     private Button playBtn;
     private int combo;
     private Sound[] comboSound;
@@ -53,7 +50,7 @@ public class PlayState extends State {
         // EarthSprite
         earth = new EarthSprite(resource);
 
-        meteoroidManager = new MeteoroidManager(earth, resource);
+        spriteManager = new SpriteManager(earth, resource);
 
         playBtn = new Button(resource);
         playBtn.setBtnUp(resource.getRegion("button/play"));
@@ -100,7 +97,7 @@ public class PlayState extends State {
                 isTouch = false;
                 mouseEffect.setPosition(-500, -500);
                 int attack = gestureDetection.finish();
-                int count = meteoroidManager.attacked(attack);
+                int count = spriteManager.attacked(attack);
                 int score = 0;
                 if (attack == 4 && count > 0)
                     earth.heal(count);
@@ -120,7 +117,7 @@ public class PlayState extends State {
                 Gdx.app.debug(TAG, "Attack: " + attack);
             }
 
-            meteoroidManager.update(deltaTime);
+            spriteManager.update(deltaTime);
         } else {
             // Freeze Everything
             hudSprite.gameOver();
@@ -132,8 +129,8 @@ public class PlayState extends State {
     @Override
     public void render(SpriteBatch batch) {
         earth.render(batch);
+        spriteManager.render(batch);
         hudSprite.render(batch);
-        meteoroidManager.render(batch);
         if (!earth.isDead()) {
             mouseEffect.draw(batch);
             gestureDetection.render(batch);

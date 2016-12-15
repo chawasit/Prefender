@@ -7,7 +7,9 @@ import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
+import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -28,6 +30,7 @@ public class Prefender extends ApplicationAdapter {
     public static final String TITLE = "Prefender CPE#24";
     public static int HIGH_SCORE = 0;
     public static boolean enableSound = true;
+    private static OrthographicCamera camera;
     private StateManager stateManager;
     private SpriteBatch batch;
     private AssetManager assetManager;
@@ -55,6 +58,11 @@ public class Prefender extends ApplicationAdapter {
 
         // Init Base System
         batch = new SpriteBatch();
+        camera = new OrthographicCamera();
+
+        camera.setToOrtho(false);
+        batch.setProjectionMatrix(camera.combined);
+
         stateManager = new StateManager();
         assetManager = new AssetManager();
         assetManager.load("packed/resource.atlas", TextureAtlas.class);
@@ -101,6 +109,8 @@ public class Prefender extends ApplicationAdapter {
 
         // Draw New Frame
         float deltaTime = Gdx.graphics.getDeltaTime();
+        camera.update();
+        batch.setProjectionMatrix(camera.combined);
         batch.begin();
 
         if (assetManager.update() && TimeUtils.millis() > splash_time) {
@@ -140,5 +150,13 @@ public class Prefender extends ApplicationAdapter {
         if (batch != null)
             batch.dispose();
         startUpSound.dispose();
+    }
+
+    @Override
+    public void resize(int width, int height) {
+        super.resize(width, height);
+//        camera.viewportWidth = 30f;
+//        camera.viewportHeight = 30f * height/width;
+//        camera.update();
     }
 }

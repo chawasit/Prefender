@@ -1,6 +1,6 @@
 
 resource.png
-size: 2048,1024
+size: 4096,1024
 format: RGBA8888
 filter: MipMapLinearLinear,MipMapLinearLinear
 repeat: none
@@ -9,6 +9,13 @@ loading
   xy: 2, 2
   size: 1200, 720
   orig: 1200, 720
+  offset: 0, 0
+  index: -1
+loading1000x600
+  rotate: false
+  xy: 1204, 122
+  size: 1000, 600
+  orig: 1000, 600
   offset: 0, 0
   index: -1
 
@@ -232,79 +239,79 @@ filter: MipMapLinearLinear,MipMapLinearLinear
 repeat: none
 meteoroid/1
   rotate: false
-  xy: 2, 2
+  xy: 493, 626
   size: 645, 251
   orig: 645, 251
   offset: 0, 0
   index: -1
 meteoroid/2
   rotate: false
-  xy: 984, 522
+  xy: 493, 373
   size: 645, 251
   orig: 645, 251
   offset: 0, 0
   index: -1
 meteoroid/3
   rotate: false
-  xy: 984, 269
+  xy: 1140, 626
   size: 645, 251
   orig: 645, 251
   offset: 0, 0
   index: -1
 meteoroid/4
   rotate: false
-  xy: 1631, 522
+  xy: 1140, 373
   size: 645, 251
   orig: 645, 251
   offset: 0, 0
   index: -1
 meteoroid/5
   rotate: false
-  xy: 1631, 269
+  xy: 1787, 626
   size: 645, 251
   orig: 645, 251
   offset: 0, 0
   index: -1
 meteoroid/b1
   rotate: false
-  xy: 2278, 270
+  xy: 2434, 627
   size: 644, 250
   orig: 644, 250
   offset: 0, 0
   index: -1
 meteoroid/b2
   rotate: false
-  xy: 2924, 523
+  xy: 3080, 627
   size: 644, 250
   orig: 644, 250
   offset: 0, 0
   index: -1
 meteoroid/b3
   rotate: false
-  xy: 2924, 271
+  xy: 2, 107
   size: 644, 250
   orig: 644, 250
   offset: 0, 0
   index: -1
 meteoroid/b4
   rotate: false
-  xy: 2278, 522
+  xy: 1787, 373
   size: 644, 251
   orig: 644, 251
   offset: 0, 0
   index: -1
 meteoroid/lightning
   rotate: false
-  xy: 2, 255
+  xy: 2, 359
   size: 489, 518
   orig: 489, 518
   offset: 0, 0
   index: -1
 meteoroid/shield
   rotate: false
-  xy: 493, 255
-  size: 489, 518
-  orig: 489, 518
+  xy: 648, 2
+  size: 369, 369
+  orig: 369, 369
   offset: 0, 0
   index: -1
 

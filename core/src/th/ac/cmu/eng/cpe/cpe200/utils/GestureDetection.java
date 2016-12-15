@@ -21,7 +21,7 @@ public class GestureDetection {
     private static final int GRID_DIAMETER = 10;
     private static final double MAX_ERROR = 0.20d;
     private static final int CIRCLE_RADIUS = 3;
-    private static final float adjustGestureAngle = 10; // must < 22
+    private static final float adjustGestureAngle = 6; // must < 22
 
     int[] histogram;
 
@@ -58,7 +58,7 @@ public class GestureDetection {
                 touchLine.dispose();
             touchLine = new Texture(pixmap, true);
             touchLine.setFilter(Texture.TextureFilter.MipMapLinearLinear, Texture.TextureFilter.MipMapLinearLinear);
-            batch.draw(touchLine, 0, 0);
+            batch.draw(touchLine, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         }
     }
 

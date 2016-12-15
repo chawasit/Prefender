@@ -13,24 +13,152 @@ public class GameLevelManager {
             {
                     // wave 1
                     {
-                            new MeteoroidSpec(1, new int[]{1, 2}),
-                            new MeteoroidSpec(3, new int[]{2, 3}),
-                            new MeteoroidSpec(5, new int[]{1, 4}),
+                            new MeteoroidSpec(1, new int[]{0}),
+                            new MeteoroidSpec(2, new int[]{1}),
+                            new MeteoroidSpec(5, new int[]{0}),
+                            new MeteoroidSpec(2, new int[]{0}, 1000),
+                            new MeteoroidSpec(3, new int[]{2}, 1000),
+                            new MeteoroidSpec(6, new int[]{3}, 1000),
+                            new MeteoroidSpec(7, new int[]{1}, 1000),
                     },
                     // wave 2
                     {
-                            new MeteoroidSpec(1, new int[]{1, 2, 1}),
-                            new MeteoroidSpec(10, new int[]{2, 3}),
-                            new MeteoroidSpec(5, new int[]{1, 2, 2}),
-                            new MeteoroidSpec(1, new int[]{3, 2, 3}, 1000),
-                            new MeteoroidSpec(7, new int[]{2, 3}, 1000),
-                            new MeteoroidSpec(4, new int[]{1, 3}, 2000),
+                            new MeteoroidSpec(1, new int[]{1, 2}),
+                            new MeteoroidSpec(3, new int[]{2, 3}),
+                            new MeteoroidSpec(6, new int[]{1, 3}),
+                            new MeteoroidSpec(1, new int[]{1, 2}, 1000),
+                            new MeteoroidSpec(3, new int[]{2, 3}, 1000),
+                            new MeteoroidSpec(6, new int[]{1, 3}, 1500),
+                    },
+                    // wave 3
+                    {
+                            new MeteoroidSpec(1, new int[]{0}),
+                            new MeteoroidSpec(2, new int[]{1}),
+                            new MeteoroidSpec(3, new int[]{2}),
+                            new MeteoroidSpec(4, new int[]{3}),
+                            new MeteoroidSpec(5, new int[]{0}, 2000),
+                            new MeteoroidSpec(6, new int[]{1}, 2300),
+                            new MeteoroidSpec(7, new int[]{2}, 2600),
+                            new MeteoroidSpec(8, new int[]{3}, 2900),
                     },
                     // Boss
                     {
-                            new MeteoroidSpec(1, new int[]{1, 2, 3, 3, 2, 1, 2, 1, 2}),
+                            new MeteoroidSpec(7, new int[]{1, 2, 3, 3, 2, 1, 2, 1, 2}), //slow
+
                     }
             },
+            {
+                    // wave 1
+                    {
+                            new MeteoroidSpec(2, new int[]{3, 1}),
+                            new MeteoroidSpec(6, new int[]{5}),
+                            new MeteoroidSpec(7, new int[]{0, 1}),
+                            new MeteoroidSpec(9, new int[]{1, 1}),
+                            new MeteoroidSpec(10, new int[]{2, 1}),
+                    },
+                    // wave 2
+                    {
+                            new MeteoroidSpec(2, new int[]{3, 0}),
+                            new MeteoroidSpec(7, new int[]{0, 1}),
+                            new MeteoroidSpec(9, new int[]{1, 2}),
+                            new MeteoroidSpec(10, new int[]{2, 3}),
+                            new MeteoroidSpec(1, new int[]{3, 0}, 1500),
+                            new MeteoroidSpec(4, new int[]{2, 3}, 1500),
+                            new MeteoroidSpec(8, new int[]{0, 1}, 2000),
+                            new MeteoroidSpec(6, new int[]{1, 2}, 2000),
+                            new MeteoroidSpec(4, new int[]{5}, 2200),
+                    },
+                    // wave 3
+                    {
+                            new MeteoroidSpec(1, new int[]{1}),
+                            new MeteoroidSpec(3, new int[]{1}),
+                            new MeteoroidSpec(5, new int[]{0}),
+                            new MeteoroidSpec(7, new int[]{1}),
+                            new MeteoroidSpec(10, new int[]{0}),
+                            new MeteoroidSpec(2, new int[]{2, 0, 1}, 1500),
+                            new MeteoroidSpec(4, new int[]{2, 0, 1}, 1500),
+                            new MeteoroidSpec(6, new int[]{2, 0, 0}, 1500),
+                            new MeteoroidSpec(8, new int[]{3, 0, 0}, 1500),
+                            new MeteoroidSpec(9, new int[]{3, 0, 1}, 1500),
+                    },
+                    // wave 4
+                    {
+                            new MeteoroidSpec(6, new int[]{1}, 0),
+                            new MeteoroidSpec(6, new int[]{5}, 300),
+                            new MeteoroidSpec(7, new int[]{2}, 600),
+                            new MeteoroidSpec(8, new int[]{3}, 900),
+                            new MeteoroidSpec(8, new int[]{0}, 1200),
+                            new MeteoroidSpec(10, new int[]{3, 1}, 1500),
+                            new MeteoroidSpec(10, new int[]{1}, 1800),
+                            new MeteoroidSpec(4, new int[]{2}, 2100),
+                            new MeteoroidSpec(3, new int[]{1, 3}, 2400),
+                            new MeteoroidSpec(3, new int[]{2, 0}, 2700),
+                            new MeteoroidSpec(2, new int[]{3, 1}, 3000),
+                            new MeteoroidSpec(1, new int[]{0, 2}, 500),
+                            new MeteoroidSpec(9, new int[]{1, 3}, 500),
+                    },
+                    // Boss
+                    {
+                            new MeteoroidSpec(6, new int[]{1, 0, 1}),
+                            new MeteoroidSpec(7, new int[]{1, 1, 1, 0, 0, 2, 0, 0, 1, 1, 3, 1, 1, 1, 0, 2, 0, 1}, 500), //slow
+                            new MeteoroidSpec(8, new int[]{0, 1, 0}, 1000),
+                            new MeteoroidSpec(6, new int[]{2, 3}, 2000),
+                            new MeteoroidSpec(8, new int[]{3, 0}, 2000),
+                    },
+            },
+            {
+                    // wave 1
+                    {
+                            new MeteoroidSpec(4, new int[]{3, 0, 2}),
+                            new MeteoroidSpec(7, new int[]{1, 0, 2}),
+                            new MeteoroidSpec(9, new int[]{1, 3}, 3500),
+                    },
+                    // wave 2
+                    {
+                            new MeteoroidSpec(5, new int[]{0, 2, 0, 3, 0, 2, 0, 3}),
+                            new MeteoroidSpec(8, new int[]{1, 2, 1, 3, 1, 2, 1, 3}),
+                            new MeteoroidSpec(5, new int[]{0, 2, 0, 3, 0, 2, 0, 3}),
+
+                    },
+                    // wave 3
+                    {
+                            new MeteoroidSpec(2, new int[]{1, 3, 1, 0}),
+                            new MeteoroidSpec(4, new int[]{1, 0, 1, 2}),
+                            new MeteoroidSpec(2, new int[]{0, 3, 2, 0}),
+                            new MeteoroidSpec(3, new int[]{5}, 2500),
+                            new MeteoroidSpec(4, new int[]{3, 3, 0}, 2800),
+                            new MeteoroidSpec(6, new int[]{2, 2, 0}, 3100),
+                            new MeteoroidSpec(7, new int[]{0}, 3400), //speed increase
+                            new MeteoroidSpec(2, new int[]{1}, 4000), //speed increase
+                            new MeteoroidSpec(1, new int[]{0, 2, 0, 3, 0, 2, 0, 3}, 5500),
+                            new MeteoroidSpec(5, new int[]{1, 2, 1, 3, 1, 2, 1, 3}, 6000),
+                    },
+                    // wave 4
+                    {
+                            new MeteoroidSpec(3, new int[]{0, 1, 0, 1, 0, 2, 2, 3}),
+                            new MeteoroidSpec(8, new int[]{1, 0, 1, 0, 1, 2, 3, 2}),
+                            new MeteoroidSpec(5, new int[]{0, 2, 0, 3, 0, 2, 0, 3}),
+                            new MeteoroidSpec(1, new int[]{1, 2, 3, 0}, 5000), //speed increase
+                            new MeteoroidSpec(4, new int[]{0, 0, 3, 1}, 6000), //speed increase
+                            new MeteoroidSpec(6, new int[]{5}, 7000), //speed increase
+                            new MeteoroidSpec(10, new int[]{1, 1, 2, 0}, 8500),
+                            new MeteoroidSpec(9, new int[]{0, 3, 3, 0}, 9000), //speed increase
+                            new MeteoroidSpec(2, new int[]{1, 2, 3, 0}, 10000),
+                            new MeteoroidSpec(10, new int[]{3, 1, 3, 0}, 10500), //speed increase
+                    },
+                    // Boss
+                    {
+                            new MeteoroidSpec(5, new int[]{3, 0, 3, 1}),
+                            new MeteoroidSpec(8, new int[]{3, 0, 3, 1}),
+                            new MeteoroidSpec(7, new int[]{1, 1, 1, 0, 0, 0, 2, 2, 2, 3, 3, 3, 0, 1, 2, 3, 0, 1, 2, 3, 3, 2, 2, 1, 0, 1, 0}, 500), //slow
+                            new MeteoroidSpec(2, new int[]{0, 1, 0}, 3000),
+                            new MeteoroidSpec(3, new int[]{2, 3}, 3500),
+                            new MeteoroidSpec(2, new int[]{3, 3}, 4000),
+                            new MeteoroidSpec(3, new int[]{2, 3}, 4500),
+                            new MeteoroidSpec(9, new int[]{1, 0}, 5500), //speed increase
+                            new MeteoroidSpec(10, new int[]{0, 1}, 6000), //speed increase
+                    }
+            }
     };
 
     // Position 8 axis
