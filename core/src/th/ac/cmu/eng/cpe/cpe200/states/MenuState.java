@@ -14,10 +14,12 @@ import th.ac.cmu.eng.cpe.cpe200.sprites.Button;
  */
 public class MenuState extends State {
 
+    private static final String TAG = MenuState.class.getSimpleName();
     private Button playBtn;
     private Button soundOnBtn;
     private Button soundOffBtn;
     private Sprite logo;
+    private int god_counter;
 
     public MenuState(StateManager stateManager, Skin skin) {
         super(stateManager, skin);
@@ -75,6 +77,8 @@ public class MenuState extends State {
         logo.setScale((float) 0.3);
         logo.setOriginCenter();
         logo.setPosition(Prefender.WIDTH / 2 - logo.getWidth() / 2, Prefender.HEIGHT / 2);
+
+        god_counter = 0;
     }
 
     @Override
@@ -84,6 +88,17 @@ public class MenuState extends State {
             soundOnBtn.update(deltaTime);
         else
             soundOffBtn.update(deltaTime);
+        if(Gdx.input.justTouched()) {
+            int x = Gdx.input.getX();
+            int y = Gdx.input.getY();
+            if(x<10 && y < 10) {
+                god_counter++;
+            }
+            if(god_counter > 10) {
+                Prefender.GOD_MODE = true;
+                Gdx.app.log(TAG, "GOD MODE ! ");
+            }
+        }
     }
 
     @Override

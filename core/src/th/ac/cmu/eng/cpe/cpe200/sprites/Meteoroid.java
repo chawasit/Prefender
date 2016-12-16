@@ -1,18 +1,14 @@
 package th.ac.cmu.eng.cpe.cpe200.sprites;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.math.GridPoint2;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.scenes.scene2d.ui.List;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import th.ac.cmu.eng.cpe.cpe200.Prefender;
 import th.ac.cmu.eng.cpe.cpe200.bases.BaseSprite;
-import th.ac.cmu.eng.cpe.cpe200.utils.GameLevelManager;
 
 import java.util.ArrayList;
 
@@ -185,10 +181,10 @@ public class Meteoroid extends BaseSprite {
 
             float posX = Math.min(Prefender.WIDTH, position.x);
             posX = Math.max((hpSize * (HP_WIDTH + 5)), posX);
-            if(!hp.isEmpty())
+            if (!hp.isEmpty())
                 batch.draw(hpDraw[hp.get(i)],
-                    posX - ((hpSize - i - 1) * (HP_WIDTH + 5)), posY,
-                    HP_WIDTH, HP_HEIGHT);
+                        posX - ((hpSize - i - 1) * (HP_WIDTH + 5)), posY,
+                        HP_WIDTH, HP_HEIGHT);
         }
     }
 
@@ -205,7 +201,7 @@ public class Meteoroid extends BaseSprite {
     }
 
     public boolean attacked(int id) {
-        if (!hp.isEmpty() && (id == hp.get(0) || id == 5)) {
+        if (!hp.isEmpty() && (id == hp.get(0) || id == -2)) {
             hp.remove(0);
             if (hp.isEmpty()) {
                 velocity_factor = 10;
@@ -225,7 +221,7 @@ public class Meteoroid extends BaseSprite {
     }
 
     public float getScale() {
-        return lastScale = isDestroying()?lastScale:(Math.min(hp.size(), 10) / 4f) / 2 + 0.5f;
+        return lastScale = isDestroying() ? lastScale : (Math.min(hp.size(), 10) / 4f) / 2 + 0.5f;
     }
 
     public float getDistanceToEarth() {

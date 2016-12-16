@@ -20,6 +20,7 @@ public class EarthSprite extends BaseSprite {
     private TextureRegion[] keyFrame;
     private float stateTime;
     private Animation anim;
+    private float immmunityTime;
 
     public EarthSprite(Skin skin) {
         super(skin);
@@ -47,10 +48,13 @@ public class EarthSprite extends BaseSprite {
         stateTime = 0;
 
         anim = new Animation(1/12f, keyFrame);
+
+        immmunityTime = 100;
     }
 
     @Override
     public void update(float deltaTime) {
+        immmunityTime += deltaTime;
         if (state > 4)
             stateTime += deltaTime;
     }
@@ -71,7 +75,10 @@ public class EarthSprite extends BaseSprite {
     }
 
     public boolean attacked() {
-        state++;
+        if(!Prefender.GOD_MODE && immmunityTime > 0.8f) {
+            state++;
+            immmunityTime = 0f;
+        }
         return state > 4;
     }
 

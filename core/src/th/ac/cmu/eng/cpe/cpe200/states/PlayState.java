@@ -101,6 +101,8 @@ public class PlayState extends State {
                 int score = 0;
                 if (attack == 4 && count > 0)
                     earth.heal(count);
+                if((attack == 5 && count >0) || Prefender.GOD_MODE)
+                    count = spriteManager.attacked(-2);
                 if (count > 0 && combo < comboSound.length - 1)
                     combo++;
                 else

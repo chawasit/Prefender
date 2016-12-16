@@ -30,6 +30,7 @@ public class Prefender extends ApplicationAdapter {
     public static final String TITLE = "Prefender CPE#24";
     public static int HIGH_SCORE = 0;
     public static boolean enableSound = true;
+    public static boolean GOD_MODE = false;
     private static OrthographicCamera camera;
     private StateManager stateManager;
     private SpriteBatch batch;

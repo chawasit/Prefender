@@ -28,7 +28,7 @@ public class GameLevelManager {
                             new MeteoroidSpec(6, new int[]{1, 3}),
                             new MeteoroidSpec(1, new int[]{1, 2}, 1000),
                             new MeteoroidSpec(3, new int[]{2, 3}, 1000),
-                            new MeteoroidSpec(6, new int[]{1, 3}, 1500),
+                            new MeteoroidSpec(6, new int[]{1, 3}, 1300),
                     },
                     // wave 3
                     {
@@ -94,8 +94,6 @@ public class GameLevelManager {
                             new MeteoroidSpec(3, new int[]{1, 3}, 2400),
                             new MeteoroidSpec(3, new int[]{2, 0}, 2700),
                             new MeteoroidSpec(2, new int[]{3, 1}, 3000),
-                            new MeteoroidSpec(1, new int[]{0, 2}, 500),
-                            new MeteoroidSpec(9, new int[]{1, 3}, 500),
                     },
                     // Boss
                     {

@@ -87,7 +87,8 @@ public class SpriteManager {
         if (id == 4) {
             count = shieldSprites.size();
             shieldSprites.clear();
-            healSound.play();
+            if (Prefender.enableSound)
+                healSound.play();
         } else {
             for (Meteoroid m :
                     meteoroids) {
@@ -122,15 +123,17 @@ public class SpriteManager {
                 if (wave == gameLevelManager.level[level].length - 1) {
                     level++;
                     levelTime = 0;
+                    waveTime = 0;
                     wave = 0;
                     meteoroidID = 0;
-                    if(earthSprite.getState()>0) {
+                    if (earthSprite.getState() > 0) {
                         for (int i = 0; i < earthSprite.getState(); i++) {
                             shieldSprites.add(new ShieldSprite(resource));
                         }
                     }
                 } else {
                     wave++;
+                    waveTime = 0;
                     meteoroidID = 0;
                 }
             }
